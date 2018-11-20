@@ -18,6 +18,7 @@ import { InMemoryDataService } from './services/in-memory-data-service';
 import { Http } from '@angular/http';
 import { OrganizationSearchComponent } from './organization-search/organization-search.component';
 import { ArticleSearchComponent } from './article-search/article-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ArticleSearchComponent } from './article-search/article-search.componen
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false},
     ),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
