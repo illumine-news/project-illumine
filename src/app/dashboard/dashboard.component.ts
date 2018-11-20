@@ -1,0 +1,35 @@
+import { Component, OnInit } from '@angular/core';
+import { Article } from '../domain/article';
+import { ArticleService } from '../services/article.service';
+import { Organization } from '../domain/organization';
+import { OrganizationService } from '../services/organization.service';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
+})
+export class DashboardComponent implements OnInit {
+  articles: Article[] = [];
+  organizations: Organization[] = [];
+
+  constructor(
+    private articleService: ArticleService,
+    private organizationService: OrganizationService,
+    ) { }
+
+  ngOnInit() {
+    this.getArticles();
+    this.getOrganizations();
+  }
+
+  getArticles(): void {
+    this.articleService.getArticles()
+      .subscribe(articles => this.articles = articles.slice(1, 5));
+  }
+
+  getOrganizations(): void {
+    this.organizationService.getOrganizations()
+      .subscribe(organizations => this.organizations = organizations.slice(1, 5));
+  }
+}

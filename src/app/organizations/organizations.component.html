@@ -1,0 +1,18 @@
+<ul class="organizations">
+    <li *ngFor="let organization of organizations">
+      <a routerLink="/detail/{{organization.id}}">
+        <span class="badge">{{organization.id}}</span> {{organization.name}}
+      </a>
+      <button class="delete" title="delete organization"
+      (click)="delete(organization)">x</button>
+    </li>
+  </ul>
+  <div>
+      <label>Organization name:
+        <input #organizationName />
+      </label>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="add(organizationName.value); organizationName.value=''">
+        add
+      </button>
+    </div>

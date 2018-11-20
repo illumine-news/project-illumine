@@ -1,0 +1,13 @@
+<div id="search-component">
+    <h4>Organization Search</h4>
+  
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let organization of organizations$ | async" >
+        <a routerLink="/detail/{{organization.id}}">
+          {{organization.name}}
+        </a>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,19 @@
+<ul class="articles">
+    <li *ngFor="let article of articles">
+      <a routerLink="/detail/{{article.id}}">
+        <span class="badge">{{article.id}}</span> {{article.name}}
+      </a>
+      <button class="delete" title="delete article"
+      (click)="delete(article)">x</button>
+    </li>
+  </ul>
+  <div>
+      <label>Article name:
+        <input #articleName />
+      </label>
+      <!--TODO: add author-->
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="add(articleName.value); articleName.value=''">
+        add
+      </button>
+    </div>
