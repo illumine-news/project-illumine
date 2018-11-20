@@ -14,7 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
+import { InMemoryDataService } from './services/in-memory-data-service';
 import { Http } from '@angular/http';
 import { OrganizationSearchComponent } from './organization-search/organization-search.component';
 import { ArticleSearchComponent } from './article-search/article-search.component';
@@ -37,8 +37,8 @@ import { ArticleSearchComponent } from './article-search/article-search.componen
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false}
-    )
+      InMemoryDataService, { dataEncapsulation: false},
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]
