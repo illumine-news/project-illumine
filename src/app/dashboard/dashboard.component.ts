@@ -3,7 +3,6 @@ import { Article } from '../domain/article';
 import { ArticleService } from '../services/article.service';
 import { Organization } from '../domain/organization';
 import { OrganizationService } from '../services/organization.service';
-import {MatGridListModule, MatGridList, MatGridTile} from '@angular/material/grid-list';
 
 export interface Tile {
   color: string;
@@ -18,12 +17,12 @@ export interface Tile {
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
+  // tiles: Tile[] = [
+  //   {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
+  //   {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
+  //   {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+  //   {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+  //];
   
   articles: Article[] = [];
   organizations: Organization[] = [];

@@ -19,6 +19,8 @@ import { Http } from '@angular/http';
 import { OrganizationSearchComponent } from './organization-search/organization-search.component';
 import { ArticleSearchComponent } from './article-search/article-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       InMemoryDataService, { dataEncapsulation: false},
     ),
     BrowserAnimationsModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
