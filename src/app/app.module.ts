@@ -18,6 +18,9 @@ import { InMemoryDataService } from './services/in-memory-data-service';
 import { Http } from '@angular/http';
 import { OrganizationSearchComponent } from './organization-search/organization-search.component';
 import { ArticleSearchComponent } from './article-search/article-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { ArticleSearchComponent } from './article-search/article-search.componen
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false},
     ),
+    BrowserAnimationsModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

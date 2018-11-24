@@ -1,9 +1,9 @@
 /* DashboardComponent's private CSS styles */
-/* [class*='col-'] {
+[class*='col-'] {
     float: left;
     padding-right: 20px;
     padding-bottom: 20px;
-  } */
+  }
   [class*='col-']:last-of-type {
     padding-right: 0;
   }
@@ -16,7 +16,7 @@
     box-sizing: border-box;
   }
   h3 {
-    text-align: center; margin-bottom: 0;
+    text-align: left; margin-bottom: 0;
   }
   h4 {
     position: relative;
@@ -29,7 +29,7 @@
   }
   .module {
     padding: 20px;
-    text-align: center;
+    text-align: left;
     color: #eee;
     max-height: 120px;
     min-width: 120px;
