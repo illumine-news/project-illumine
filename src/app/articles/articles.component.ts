@@ -1,27 +1,25 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-//import { MatTableDataSource, MatTable, MatSort} from '@angular/material';
 import { Article } from '../domain/article';
 import { ArticleService } from '../services/article.service';
-//import { DataSource } from '@angular/cdk/table';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface ArticleDefinition {
+  id: number;
+  articleName: string;
+  authorName: string;
+  datePublished: Date;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+const ARTICLE_DATA: ArticleDefinition[] = [
+  {id: 1, articleName: 'On Geralt and Toe Stubbing', authorName: "Andrzej Sapkowski", datePublished: new Date(1/1/2018)},
+  {id: 2, articleName: 'Wines of Toussant', authorName: "Andrzej Sapkowski", datePublished: null},
+  {id: 3, articleName: 'Mechanical Man', authorName: "Chris Roberts", datePublished: null},
+  {id: 4, articleName: 'Moonlighters', authorName: "Eric Roberts", datePublished: null},
+  {id: 5, articleName: 'How to build poison tolerance', authorName: "John Roberts", datePublished: null},
+  {id: 6, articleName: 'Guide to Griefing', authorName: "Otzdarva", datePublished: null},
+  {id: 7, articleName: 'Presidents and Pancakes', authorName: "George Stephanopolous", datePublished: null},
+  {id: 8, articleName: 'Righteous Fury', authorName: "Brad Pitt", datePublished: null},
+  {id: 9, articleName: 'What is a polling error?', authorName: "Nate Silver", datePublished: null},
+  {id: 10, articleName: 'Neon Demons', authorName: "Elle Fanning", datePublished: null},
 ];
 
 @Component({
@@ -31,52 +29,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class ArticlesComponent implements OnInit {
-  //dataSource;
-  //displayedColumns = [];
- // @ViewChild(MatSort) sort: MatSort;
   
   articles: Article[];
   
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['id', 'articleName', 'authorName', 'datePublished'];
+  dataSource = ARTICLE_DATA;
   
   constructor(private articleService: ArticleService) { }
-
-  // columnNames = [{
-  //   id: "position",
-  //   value: "No."
-
-  // }, {
-  //   id: "name",
-  //   value: "Name"
-  // },
-  // {
-  //   id: "weight",
-  //   value: "Weight"
-  // },
-  // {
-  //   id: "symbol",
-  //   value: "Symbol"
-  // }];
 
   ngOnInit() {
     //this.getArticles();
     console.log("Made it to init");
-    // this.displayedColumns = this.columnNames.map(x => x.id);
-    //    this.createTable();
   }
-
-  // createTable() {
-  //   let tableArr: Element[] = [{ position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  //   { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  //   { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  //   { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  //   { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  //   { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }
-  //   ];
-  //   this.dataSource = new MatTableDataSource(tableArr);
-  //   this.dataSource.sort = this.sort;
-  // }
 
   // getArticles(): void {
   //   this.articleService.getArticles()
