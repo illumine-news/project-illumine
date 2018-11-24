@@ -32,7 +32,7 @@ export class ArticlesComponent implements OnInit {
   
   articles: Article[];
   
-  displayedColumns: string[] = ['id', 'articleName', 'authorName', 'datePublished'];
+  displayedColumns: string[] = ['articleName', 'authorName', 'datePublished'];
   dataSource = ARTICLE_DATA;
   
   constructor(private articleService: ArticleService) { }
