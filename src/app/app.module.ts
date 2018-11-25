@@ -22,6 +22,7 @@ import { ArticleSearchComponent } from './article-search/article-search.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -45,8 +46,9 @@ import { MatSortModule } from '@angular/material/sort';
       InMemoryDataService, { dataEncapsulation: false},
     ),
     BrowserAnimationsModule,
+    MatTableModule,
     MatSortModule,
-    MatTableModule
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
