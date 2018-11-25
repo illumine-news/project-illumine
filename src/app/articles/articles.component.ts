@@ -10,9 +10,9 @@ export interface ArticleDefinition {
 }
 
 const ARTICLE_DATA: ArticleDefinition[] = [
-  {id: 1, articleName: 'On Geralt and Toe Stubbing', authorName: "Andrzej Sapkowski", datePublished: new Date(1/1/2018)},
-  {id: 2, articleName: 'Wines of Toussant', authorName: "Andrzej Sapkowski", datePublished: null},
-  {id: 3, articleName: 'Mechanical Man', authorName: "Chris Roberts", datePublished: null},
+  {id: 1, articleName: 'On Geralt and Toe Stubbing', authorName: "Andrzej Sapkowski", datePublished: new Date('December 17, 1995 03:24:00')},
+  {id: 2, articleName: 'Wines of Toussant', authorName: "Andrzej Sapkowski", datePublished: new Date('October 15, 2004 01:17:05')},
+  {id: 3, articleName: 'Mechanical Man', authorName: "Chris Roberts", datePublished: new Date('June 27, 2016 21:14:35')},
   {id: 4, articleName: 'Moonlighters', authorName: "Eric Roberts", datePublished: null},
   {id: 5, articleName: 'How to build poison tolerance', authorName: "John Roberts", datePublished: null},
   {id: 6, articleName: 'Guide to Griefing', authorName: "Otzdarva", datePublished: null},
