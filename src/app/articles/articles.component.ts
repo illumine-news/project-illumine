@@ -23,7 +23,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class ArticlesComponent implements OnInit {
-  displayedColumns: string[] = ['articleName', 'authorName', 'organizationId', 'datePublished'];
+  displayedColumns: string[] = ['articleName', 'authorName', 'organizationId', 'datePublished', 'illumineScore'];
   clickedName: string;
   dataSource: MatTableDataSource<Article> = new MatTableDataSource<Article>();
   sortedData;
@@ -55,9 +55,10 @@ export class ArticlesComponent implements OnInit {
       switch (sort.active) {
         case 'id': return this.compare(a.id, b.id, isAsc);
         case 'name': return this.compare(+a.name, +b.name, isAsc);
-        case 'authorName': return this.compare(a.authorName, b.authorName, isAsc);
-        case 'organizationName': return this.compare(a.organizationName, b.organizationName, isAsc);
-        case 'datePublished': return this.compare(a.datePublished, b.datePublished, isAsc);
+        case 'authorName': return this.compare(+a.authorName, +b.authorName, isAsc);
+        case 'organizationName': return this.compare(+a.organizationName, +b.organizationName, isAsc);
+        case 'datePublished': return this.compare(+a.datePublished, +b.datePublished, isAsc);
+        case 'illumineScore': return this.compare(+a.illumineScore, +b.illumineScore, isAsc);
         default: return 0;
       }
     });

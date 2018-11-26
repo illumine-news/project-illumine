@@ -4,4 +4,5 @@ export class Article {
     authorName: string;
     organizationName: string;
     datePublished: Date;
+    illumineScore: number;
 }
