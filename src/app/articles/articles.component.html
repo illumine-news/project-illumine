@@ -1,23 +1,23 @@
 <form f>
-    <table mat-table [dataSource]="articles" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
 
   <ng-container matColumnDef="articleName">
-    <th mat-header-cell *matHeaderCellDef>Article Name</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Article Name</th>
     <td mat-cell *matCellDef="let article"> {{article.articleName}} </td>
   </ng-container>
 
   <ng-container matColumnDef="authorName">
-    <th mat-header-cell *matHeaderCellDef>Author Name</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Author Name</th>
     <td mat-cell *matCellDef="let article"> {{article.authorName}} </td>
   </ng-container>
 
 <ng-container matColumnDef="organizationId">
-    <th mat-header-cell *matHeaderCellDef>Organization ID </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization ID</th>
     <td mat-cell *matCellDef="let article">{{article.orgId}}</td>
   </ng-container>
 
   <ng-container matColumnDef="datePublished">
-    <th mat-header-cell *matHeaderCellDef> Date Published</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Published</th>
     <td mat-cell *matCellDef="let article"> {{article.datePublished | date : 'M/d/yyyy, h:ma'}} </td>
   </ng-container>
 
