@@ -2,11 +2,15 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { Article } from '../domain/article';
 import { ArticleService } from '../services/article.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { OrganizationService } from '../services/organization.service';
+import { Organization } from '../domain/organization';
+import { Observable } from 'rxjs';
 
 export interface ArticleDefinition {
   id: number;
   articleName: string;
   authorName: string;
+  organizationName: string;
   datePublished: Date;
 }
 
@@ -18,9 +22,11 @@ export interface ArticleDefinition {
 
 export class ArticlesComponent implements OnInit {
   articles: Article[];  
-  displayedColumns: string[] = ['articleName', 'authorName', 'datePublished'];
-  
-  constructor(private articleService: ArticleService) { }
+  displayedColumns: string[] = ['articleName', 'authorName', 'organizationId', 'datePublished'];
+  clickedName: string;
+
+  constructor(private articleService: ArticleService,
+    private organizationService: OrganizationService) { }
 
   ngOnInit() {
     this.getArticles();

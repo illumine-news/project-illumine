@@ -28,8 +28,6 @@ private organizationsUrl = 'api/organizations';
   getOrganization(id: number): Observable<Organization> {
     const url = `${this.organizationsUrl}/${id}`;
     return this.http.get<Organization>(url).pipe(
-      tap(_ => this.log(`fetched organization id=${id}`)),
-      catchError(this.handleError<Organization>(`getOrganization id=${id}`))
     );
   }
 
