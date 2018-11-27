@@ -23,7 +23,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class ArticlesComponent implements OnInit {
-  displayedColumns: string[] = ['articleName', 'authorName', 'organizationId', 'datePublished', 'illumineScore'];
+  displayedColumns: string[] = ['articleName', 'authorName', 'organizationName', 'datePublished', 'illumineScore'];
   clickedName: string;
   dataSource: MatTableDataSource<Article> = new MatTableDataSource<Article>();
   sortedData;

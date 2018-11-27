@@ -27,13 +27,7 @@ export class DashboardComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.getArticles();
     this.getOrganizations();
-  }
-
-  getArticles(): void {
-    this.articleService.getArticles()
-      .subscribe(articles => this.articles = articles.slice(1, 10));
   }
 
   getOrganizations(): void {
