@@ -1,3 +1,4 @@
+<form>
 <h3>Recent Articles</h3>
 <!----<div class="grid grid-pad">
   <a *ngFor="let article of articles" class="col"
@@ -7,7 +8,7 @@
     </div>
   </a>
 </div>-->
-<app-articles></app-articles>
+<app-articles [itemsPerPage]=[5] [displayedColumns]="['articleName', 'authorName', 'illumineScore']"></app-articles>
 
 <app-article-search></app-article-search>
 
@@ -20,3 +21,4 @@
     </div>
   </a>
 </div>
+</form>

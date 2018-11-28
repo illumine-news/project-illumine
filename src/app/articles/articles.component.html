@@ -32,7 +32,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-    
+<mat-paginator [pageSizeOptions]=getItemsPerPage() showFirstLastButtons></mat-paginator>
 <!----<ul class="articles">
     <li *ngFor="let article of articles">
       <a routerLink="/detail/{{article.id}}">

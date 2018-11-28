@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { CdkTableModule } from '@angular/cdk/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
-    CdkTableModule
+    CdkTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

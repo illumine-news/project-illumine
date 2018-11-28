@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Article } from '../domain/article';
 import { ArticleService } from '../services/article.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -7,14 +7,7 @@ import { Organization } from '../domain/organization';
 import { Observable } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
-
-// export interface ArticleDefinition {
-//   id: number;
-//   articleName: string;
-//   authorName: string;
-//   organizationName: string;
-//   datePublished: Date;
-// }
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-articles',
@@ -23,24 +16,33 @@ import { map } from 'rxjs/operators';
 })
 
 export class ArticlesComponent implements OnInit {
-  displayedColumns: string[] = ['articleName', 'authorName', 'organizationName', 'datePublished', 'illumineScore'];
-  clickedName: string;
-  dataSource: MatTableDataSource<Article> = new MatTableDataSource<Article>();
+  @Input() displayedColumns: string[] = ['articleName', 'authorName', 'organizationName', 'datePublished', 'illumineScore'];
+  @Input() itemsPerPage: number[];
+
+  dataSource = new MatTableDataSource<Article>();
   sortedData;
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
+  
 
   constructor(private articleService: ArticleService,
     private organizationService: OrganizationService) { }
 
   ngOnInit() {
     this.getArticles();
+    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
   getArticles(): void {
     this.articleService.getArticles()
-    .subscribe(articles => this.dataSource.data = articles);
+      .subscribe(articles => this.dataSource.data = articles);
+  }
+
+  getItemsPerPage(): number[] {
+    return this.itemsPerPage != null ? this.itemsPerPage : [10];
   }
 
   sortData(sort: MatSort) {
