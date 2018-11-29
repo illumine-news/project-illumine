@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrganizationSearchComponent } from './organization-search.component';
+import { OrganizationSearchComponent } from 'app/organization-search/organization-search.component';
 
 describe('OrganizationSearchComponent', () => {
   let component: OrganizationSearchComponent;

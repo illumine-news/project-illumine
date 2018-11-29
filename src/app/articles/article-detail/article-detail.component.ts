@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Article } from '../domain/article';
+import { Article } from 'app/domain/article';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { ArticleService }  from '../services/article.service';
+import { ArticleService }  from 'app/services/article.service';
  
 @Component({
   selector: 'app-article-detail',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from '../domain/article';
-import { ArticleService } from '../services/article.service';
-import { Organization } from '../domain/organization';
-import { OrganizationService } from '../services/organization.service';
+import { Article } from 'app/domain/article';
+import { ArticleService } from 'app/services/article.service';
+import { Organization } from 'app/domain/organization';
+import { OrganizationService } from 'app/services/organization.service';
 
 export interface Tile {
   color: string;

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Editorial } from 'app/domain/editorial';
-import { EditorialService } from '../services/editorial.service';
+import { EditorialService } from 'app/services/editorial.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { OrganizationService } from '../services/organization.service';
+import { OrganizationService } from 'app/services/organization.service';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 
@@ -15,7 +15,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class EditorialListComponent implements OnInit {
   
   @Input() displayedColumns: string[] = ['editorialName', 'authorName', 'organizationName', 'datePublished']; //TODO: make dynamic
-  @Input() itemsPerPage: number[] = [5]; //TODO: make dynamic
+  @Input() itemsPerPage: number[];
 
   dataSource = new MatTableDataSource<Editorial>();
   sortedData;

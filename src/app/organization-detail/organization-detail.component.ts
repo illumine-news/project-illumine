@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Organization } from '../domain/organization';
+import { Organization } from 'app/domain/organization';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { OrganizationService }  from '../services/organization.service';
+import { OrganizationService }  from 'app/services/organization.service';
  
 @Component({
   selector: 'app-organization-detail',

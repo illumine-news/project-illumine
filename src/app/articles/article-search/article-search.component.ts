@@ -7,7 +7,7 @@ import {
  } from 'rxjs/operators';
 
 import { Article } from 'app/domain/article';
-import { ArticleService } from '../../services/article.service';
+import { ArticleService } from 'app/services/article.service';
 
 @Component({
   selector: 'app-article-search',

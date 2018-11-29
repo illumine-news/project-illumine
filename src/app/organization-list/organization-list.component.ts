@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Organization } from '../domain/organization';
-import { OrganizationService } from '../services/organization.service';
+import { Organization } from 'app/domain/organization';
+import { OrganizationService } from 'app/services/organization.service';
 
 @Component({
   selector: 'app-organizations',
-  templateUrl: './organizations.component.html',
-  styleUrls: ['./organizations.component.css']
+  templateUrl: './organization-list.component.html',
+  styleUrls: ['./organization-list.component.css']
 })
-export class OrganizationsComponent implements OnInit {
+export class OrganizationListComponent implements OnInit {
   organizations: Organization[];
 
   constructor(private organizationService: OrganizationService) { }

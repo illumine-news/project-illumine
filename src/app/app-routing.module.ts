@@ -1,17 +1,19 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ArticleListComponent } from './articles/article-list/article-list.component';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
-import { OrganizationsComponent } from './organizations/organizations.component';
-import { OrganizationDetailComponent } from './organization-detail/organization-detail.component';
+import { DashboardComponent } from 'app/dashboard/dashboard.component';
+import { ArticleListComponent } from 'app/articles/article-list/article-list.component';
+import { ArticleDetailComponent } from 'app/articles/article-detail/article-detail.component';
+import { OrganizationListComponent } from 'app/organization-list/organization-list.component';
+import { OrganizationDetailComponent } from 'app/organization-detail/organization-detail.component';
+import { EditorialListComponent } from 'app/editorial-list/editorial-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'articles', component: ArticleListComponent },
+  { path: 'editorials', component: EditorialListComponent},
   { path: 'detail/:id', component: ArticleDetailComponent},
-  { path: 'organizations', component: OrganizationsComponent },
+  { path: 'organizations', component: OrganizationListComponent },
   { path: 'detail/:id', component: OrganizationDetailComponent}
 ];
 

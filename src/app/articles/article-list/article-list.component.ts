@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Article } from 'app/domain/article';
-import { ArticleService } from '../../services/article.service';
+import { ArticleService } from 'app/services/article.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { OrganizationService } from '../../services/organization.service';
+import { OrganizationService } from 'app/services/organization.service';
 import { Organization } from 'app/domain/organization';
 import { Observable } from 'rxjs';
 import { MatSort } from '@angular/material/sort';

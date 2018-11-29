@@ -6,8 +6,8 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Organization } from '../domain/organization';
-import { OrganizationService } from '../services/organization.service';
+import { Organization } from 'app/domain/organization';
+import { OrganizationService } from 'app/services/organization.service';
 
 @Component({
   selector: 'app-organization-search',
