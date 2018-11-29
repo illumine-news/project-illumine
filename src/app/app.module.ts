@@ -4,38 +4,44 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { ArticlesComponent } from './articles/articles.component';
+import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
 import { OrganizationDetailComponent } from './organization-detail/organization-detail.component';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { EditorialComponent } from './editorial-detail/editorial-detail.component';
+import { EditorialListComponent } from './editorial-list/editorial-list.component';
 import { MessagesComponent } from './messages/messages.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { Http } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data-service';
-import { Http } from '@angular/http';
+
 import { OrganizationSearchComponent } from './organization-search/organization-search.component';
-import { ArticleSearchComponent } from './article-search/article-search.component';
+import { ArticleSearchComponent } from './articles/article-search/article-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticlesComponent,
+    ArticleListComponent,
     ArticleDetailComponent,
     OrganizationsComponent,
     OrganizationDetailComponent,
     MessagesComponent,
     DashboardComponent,
     OrganizationSearchComponent,
-    ArticleSearchComponent
+    ArticleSearchComponent,
+    EditorialComponent,
+    EditorialListComponent
   ],
   imports: [
     CommonModule,

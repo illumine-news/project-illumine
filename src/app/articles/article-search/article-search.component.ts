@@ -6,8 +6,8 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Article } from '../domain/article';
-import { ArticleService } from '../services/article.service';
+import { Article } from 'app/domain/article';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article-search',

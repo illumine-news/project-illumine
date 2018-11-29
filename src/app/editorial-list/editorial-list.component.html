@@ -1,0 +1,47 @@
+<form f>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
+
+  <ng-container matColumnDef="editorialName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Editorial Name</th>
+    <td mat-cell *matCellDef="let editorial"> {{editorial.editorialName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="authorName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Author Name</th>
+    <td mat-cell *matCellDef="let editorial"> {{editorial.authorName}} </td>
+  </ng-container>
+
+<ng-container matColumnDef="organizationName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization Name</th>
+    <td mat-cell *matCellDef="let editorial">{{editorial.organizationName}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="datePublished">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Published</th>
+    <td mat-cell *matCellDef="let editorial"> {{editorial.datePublished | date : 'M/d/yyyy, h:ma'}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]=getItemsPerPage() showFirstLastButtons></mat-paginator>
+<!----<ul class="editorials">
+    <li *ngFor="let editorial of editorials">
+      <a routerLink="/detail/{{editorial.id}}">
+        <span class="badge">{{editorial.id}}</span> {{editorial.name}}
+      </a>
+      <button class="delete" title="delete editorial"
+      (click)="delete(editorial)">x</button>
+    </li>
+  </ul> -->
+  <div>
+      <label>editorial name:
+        <input #editorialName />
+      </label>
+      <!--TODO: add author-->
+      <!-- (click) passes input value to add() and then clears the input -->
+      <!----<button (click)="add(editorialName.value); editorialName.value=''">
+        add
+      </button>-->
+    </div>
+    </form>

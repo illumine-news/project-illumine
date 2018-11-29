@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from '../domain/article';
+import { Article } from 'app/domain/article';
 
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';

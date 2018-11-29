@@ -1,9 +1,6 @@
 /* articlesComponent's private CSS styles */
 table {
     margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
   }
   
   .bad {

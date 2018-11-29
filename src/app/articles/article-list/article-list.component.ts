@@ -1,21 +1,21 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { Article } from '../domain/article';
-import { ArticleService } from '../services/article.service';
+import { Article } from 'app/domain/article';
+import { ArticleService } from '../../services/article.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { OrganizationService } from '../services/organization.service';
-import { Organization } from '../domain/organization';
+import { OrganizationService } from '../../services/organization.service';
+import { Organization } from 'app/domain/organization';
 import { Observable } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  selector: 'app-article-list',
+  templateUrl: './article-list.component.html',
+  styleUrls: ['./article-list.component.css']
 })
 
-export class ArticlesComponent implements OnInit {
+export class ArticleListComponent implements OnInit {
   @Input() displayedColumns: string[] = ['articleName', 'authorName', 'organizationName', 'datePublished', 'illumineScore'];
   @Input() itemsPerPage: number[];
 
@@ -24,8 +24,6 @@ export class ArticlesComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
-  
 
   constructor(private articleService: ArticleService,
     private organizationService: OrganizationService) { }

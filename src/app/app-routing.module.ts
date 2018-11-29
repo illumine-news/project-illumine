@@ -1,7 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ArticlesComponent } from './articles/articles.component';
+import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
 import { OrganizationDetailComponent } from './organization-detail/organization-detail.component';
@@ -9,7 +9,7 @@ import { OrganizationDetailComponent } from './organization-detail/organization-
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'articles', component: ArticlesComponent },
+  { path: 'articles', component: ArticleListComponent },
   { path: 'detail/:id', component: ArticleDetailComponent},
   { path: 'organizations', component: OrganizationsComponent },
   { path: 'detail/:id', component: OrganizationDetailComponent}
