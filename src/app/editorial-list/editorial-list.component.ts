@@ -29,7 +29,7 @@ export class EditorialListComponent implements OnInit {
   ngOnInit() {
     this.getEditorials();
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    //this.dataSource.sort = this.sort; //TODO: implement sorting
   }
 
   getEditorials(): void {

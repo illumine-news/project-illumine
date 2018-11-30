@@ -1,6 +1,6 @@
 <ul class="organizations">
     <li *ngFor="let organization of organizations">
-      <a routerLink="/detail/{{organization.id}}">
+      <a routerLink="/organization-detail/{{organization.id}}">
         <span class="badge">{{organization.id}}</span> {{organization.name}}
       </a>
       <button class="delete" title="delete organization"

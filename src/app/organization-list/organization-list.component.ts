@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Organization } from 'app/domain/organization';
 import { OrganizationService } from 'app/services/organization.service';
 
+
 @Component({
   selector: 'app-organizations',
   templateUrl: './organization-list.component.html',
@@ -9,6 +10,7 @@ import { OrganizationService } from 'app/services/organization.service';
 })
 export class OrganizationListComponent implements OnInit {
   organizations: Organization[];
+
 
   constructor(private organizationService: OrganizationService) { }
 

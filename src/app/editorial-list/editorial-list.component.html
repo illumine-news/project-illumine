@@ -1,9 +1,11 @@
 <form f>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
+    <table mat-table [dataSource]="dataSource" class="table" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
 
   <ng-container matColumnDef="editorialName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Editorial Name</th>
-    <td mat-cell *matCellDef="let editorial"> {{editorial.editorialName}} </td>
+    <td mat-cell *matCellDef="let editorial">
+      <div routerLink="/editorial-detail/{{editorial.id}}" class="editorialLink">{{editorial.editorialName}}</div>
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="authorName">
@@ -22,13 +24,15 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+   
+  </tr>
 </table>
-<mat-paginator [pageSizeOptions]=getItemsPerPage() showFirstLastButtons></mat-paginator>
+<mat-paginator [pageSizeOptions]=getItemsPerPage()></mat-paginator>
 <!----<ul class="editorials">
     <li *ngFor="let editorial of editorials">
       <a routerLink="/detail/{{editorial.id}}">
-        <span class="badge">{{editorial.id}}</span> {{editorial.name}}
+        <span class="badge">{{editorial.id}}</span> {{editorial.editorialName}}
       </a>
       <button class="delete" title="delete editorial"
       (click)="delete(editorial)">x</button>

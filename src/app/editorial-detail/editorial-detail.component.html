@@ -1,3 +1,15 @@
-<p>
-  editorial works!
-</p>
+<div *ngIf="editorial">
+
+    <h2>Editorial Metadata</h2>
+    <h3>Name: {{editorial.editorialName | uppercase}}</h3>
+    <div><span>id: </span>{{editorial.id}}</div>
+    <div>
+      <label>Editable Name:
+        <input [(ngModel)]="editorial.editorialName" placeholder="name"/>
+      </label>
+    </div>
+    <div><span>rating: </span>TBD</div>
+  </div>
+
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
