@@ -4,7 +4,7 @@
   <ng-container matColumnDef="editorialName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Editorial Name</th>
     <td mat-cell *matCellDef="let editorial">
-      <div routerLink="/editorial-detail/{{editorial.id}}" class="editorialLink">{{editorial.editorialName}}</div>
+      <div routerLink="/editorials/{{editorial.id}}" class="editorialLink">{{editorial.editorialName}}</div>
     </td>
   </ng-container>
 

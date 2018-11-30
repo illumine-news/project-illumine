@@ -12,9 +12,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'articles', component: ArticleListComponent },
-  { path: 'article-detail/:id', component: ArticleDetailComponent},
+  { path: 'articles/:id', component: ArticleDetailComponent},
   { path: 'editorials', component: EditorialListComponent},
-  { path: 'editorial-detail/:id', component: EditorialDetailComponent},
+  { path: 'editorials/:id', component: EditorialDetailComponent},
   { path: 'organizations', component: OrganizationListComponent },
   { path: 'organization-detail/:id', component: OrganizationDetailComponent}
 ];
