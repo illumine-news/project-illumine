@@ -1,7 +1,7 @@
-<div *ngIf="editorial">
+<div *ngIf="admin && editorial">
 
     <h2>Editorial Metadata</h2>
-    <h3>Name: {{editorial.editorialName | uppercase}}</h3>
+    
     <div><span>id: </span>{{editorial.id}}</div>
     <div>
       <label>Editable Name:
@@ -9,7 +9,25 @@
       </label>
     </div>
     <div><span>rating: </span>TBD</div>
-  </div>
-
-  <button (click)="goBack()">go back</button>
+  
   <button (click)="save()">save</button>
+</div>  
+
+<button (click)="goBack()">go back</button>
+
+<div *ngIf="editorial"> 
+  <h3>{{editorial.editorialName | uppercase}}</h3>
+  <h5>by {{editorial.authorName}}</h5>
+
+    <mat-grid-list cols="1" rowHeight="4:1">
+      <mat-grid-tile>
+        <div class="textContent" [innerHTML] = editorial.text></div>
+      </mat-grid-tile>
+      <!----<mat-grid-tile>links-01</mat-grid-tile>-->
+      <!--<mat-grid-tile>editorial-content-02</mat-grid-tile>
+      <mat-grid-tile>links-02</mat-grid-tile>-->
+  </mat-grid-list>
+</div>
+
+
+
