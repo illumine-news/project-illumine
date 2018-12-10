@@ -2,17 +2,21 @@
 table {
     margin: 0 0 2em 0;
   }
+
+  td {
+    text-align: center;
+  }
   
   .bad {
-    background-color: red;
+    background-color: #ffc2b3;
   }
 
   .mediocre {
-    background-color: yellow;
+    background-color: #ffffb3;
   }
 
   .good {
-    background-color: green;
+    background-color: #c2f0c2;
   }
 
   .mat-cell-centered {
