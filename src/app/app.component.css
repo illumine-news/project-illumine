@@ -4,26 +4,37 @@ h1 {
     color: #999;
     margin-bottom: 0;
   }
+  
+  div {
+    width: 80%;
+  }
+  
   h2 {
     font-size: 2em;
     margin-top: 0;
     padding-top: 0;
   }
+
+  nav {
+    border-style: solid;
+    border-color: white white black white;
+  }
+
   nav a {
     padding: 5px 10px;
     text-decoration: none;
-    margin-top: 10px;
     display: inline-block;
-    background-color: #eee;
-    border-radius: 4px;
+    background-color: white;
   }
   nav a:visited, a:link {
-    color: #607d8b;
+    color: #000000;
   }
   nav a:hover {
-    color: #039be5;
-    background-color: #cfd8dc;
+    color: white;
+    background-color: black;
   }
-  nav a.active {
-    color: #039be5;
+  nav a.is-active {
+    color: white;
+    font-weight: 500;
+    background-color: black;
   }

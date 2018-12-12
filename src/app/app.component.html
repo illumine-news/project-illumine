@@ -1,9 +1,11 @@
+<div>
 <h1><a href="http://localhost:4200/dashboard"><img src="assets/img/Placeholder_Illumine_Logo.png"></a></h1>
-<nav>
-  <a routerLink="/articles">Articles</a>
-  <a routerLink="/editorials">Editorials</a>
-  <a routerLink="/organizations">Organizations</a>
-  <a routerLink="/NOT_IMPLEMENTED">Ratings</a>
-  <a routerLink="/NOT_IMPLEMENTED">Contributors</a>
-</nav>
+  <nav>
+    <a routerLink="/articles" [routerLinkActive]="'is-active'">Articles</a>
+    <a routerLink="/editorials" [routerLinkActive]="'is-active'">Editorials</a>
+    <a routerLink="/organizations" [routerLinkActive]="'is-active'">Organizations</a>
+    <a routerLink="/NOT_IMPLEMENTED">Ratings</a>
+    <a routerLink="/NOT_IMPLEMENTED">Contributors</a>
+  </nav>
+</div>
 <router-outlet></router-outlet>
