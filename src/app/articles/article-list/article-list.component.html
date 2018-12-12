@@ -3,7 +3,8 @@
 
   <ng-container matColumnDef="articleName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Article Name</th>
-    <td mat-cell *matCellDef="let article"> {{article.articleName}} </td>
+    <td mat-cell *matCellDef="let article" routerLink="/articles/{{article.id}}" class="articleLink"> {{article.articleName}} 
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="authorName">

@@ -1,0 +1,12 @@
+<h1>Reviews</h1>
+
+<mat-list>
+  <mat-list-item *ngFor="let review of reviews">
+    <h2 matLine>{{review.id}} - {{review.score}}</h2>
+    <p matLine>
+      <span> 
+      <div class="textContent" [innerHTML] = review.text></div>
+     </span>
+    </p>
+  </mat-list-item>
+</mat-list>

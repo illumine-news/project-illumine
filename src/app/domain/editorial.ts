@@ -3,6 +3,6 @@ export class Editorial {
     name: string;
     authorName: string;
     organizationName: string;
-    text: string;
+    text: string; //TODO: just encapsulate as HTML
     datePublished: Date;
 }

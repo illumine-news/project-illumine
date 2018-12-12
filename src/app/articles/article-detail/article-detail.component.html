@@ -3,12 +3,11 @@
     <h2>{{article.name | uppercase}} Details</h2>
     <div><span>id: </span>{{article.id}}</div>
     <div>
-      <label>name:
-        <input [(ngModel)]="article.name" placeholder="name"/>
+      <label>name: {{article.articleName}}
       </label>
     </div>
     <div><span>rating: </span>TBD</div>
   </div>
-
+<!--TO DO: embed modified reviews component here for each article-->
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>

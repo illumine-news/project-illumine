@@ -7,6 +7,11 @@ export class InMemoryDataService implements InMemoryDbService {
   
   <p>Praesent quis eros id leo ullamcorper vulputate. Etiam at tortor convallis, imperdiet tortor a, euismod velit. Aenean mattis leo sed purus pulvinar lobortis. Vestibulum mi tellus, luctus ac consequat et, mollis at est. Aliquam et orci tellus. Quisque pretium feugiat nibh at malesuada. Nulla id est non lorem cursus porttitor.</p>`
 
+  reviewTextGood: string = `<p>GOOD: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue porttitor quam eu dignissim. Morbi fermentum eget ex ut ullamcorper. Pellentesque sit amet erat a est auctor gravida. Nulla egestas commodo ullamcorper. Proin ornare tempus ante in ultrices. Proin feugiat, dolor a ultrices iaculis, mi risus semper orci, vitae lobortis est mi at libero. Donec imperdiet elit nec quam iaculis, eu vehicula diam lacinia. Nam lacinia ex et arcu tincidunt, et iaculis mi euismod.</p>`
+
+  reviewTextBad: string = `<p>BAD: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue porttitor quam eu dignissim. Morbi fermentum eget ex ut ullamcorper. Pellentesque sit amet erat a est auctor gravida. Nulla egestas commodo ullamcorper. Proin ornare tempus ante in ultrices. Proin feugiat, dolor a ultrices iaculis, mi risus semper orci, vitae lobortis est mi at libero. Donec imperdiet elit nec quam iaculis, eu vehicula diam lacinia. Nam lacinia ex et arcu tincidunt, et iaculis mi euismod.</p>`
+
+
   createDb() {
     const articles = [
       { id: 1, articleName: 'On Geralt and Toe Stubbing', authorName: "Andrzej Sapkowski", organizationName: "FiveThirtyEight", datePublished: new Date('December 17, 1995 03:24:00'), illumineScore: 99 },
@@ -17,7 +22,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 6, articleName: 'Guide to Griefing', authorName: "Otzdarva", organizationName: "The Atlantic", datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
       { id: 7, articleName: 'Presidents and Pancakes', authorName: "George Stephanopolous", organizationName: "MSNBC", datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
       { id: 8, articleName: 'Righteous Fury', authorName: "Brad Pitt", organizationName: "CNN", datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
-      { id: 9, articleName: 'What is a polling error?', authorName: "Nate Silver", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
+      { id: 9, articleName: 'What went wrong in 2016', authorName: "Nate Silver", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
       { id: 10, articleName: 'Neon Demons', authorName: "Elle Fanning", organizationName: "Reuters", datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
     const organizations = [
@@ -44,7 +49,19 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 29, editorialName: 'Beyond the news cycle', authorName: "Nate Silver", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
       { id: 30, editorialName: 'Peer review in journalism', authorName: "Jason Statham", organizationName: "Reuters", datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
+    const reviews = [
+      { id: 31, articleName: 'What went wrong in 2016', contributorId: 41, score: 75, text: this.reviewTextGood },
+      { id: 32, articleName: 'What went wrong in 2016', contributorId: 42, score: 92, text: this.reviewTextGood },
+      { id: 33, articleName: 'What went wrong in 2016', contributorId: 43, score: 38, text: this.reviewTextBad },
+      { id: 34, articleName: 'What went wrong in 2016', contributorId: 44, score: 14, text: this.reviewTextBad },
+      { id: 35, articleName: 'What went wrong in 2016', contributorId: 45, score: 45, text: this.reviewTextBad },
+      { id: 36, articleName: 'What went wrong in 2016', contributorId: 46, score: 86, text: this.reviewTextGood },
+      { id: 37, articleName: 'What went wrong in 2016', contributorId: 47, score: 56, text: this.reviewTextBad },
+      { id: 38, articleName: 'What went wrong in 2016', contributorId: 48, score: 73, text: this.reviewTextGood },
+      { id: 39, articleName: 'What went wrong in 2016', contributorId: 49, score: 79, text: this.reviewTextGood },
+      { id: 40, articleName: 'What went wrong in 2016', contributorId: 50, score: 89, text: this.reviewTextGood }
+    ]
 
-    return { articles, organizations, editorials };
+    return { articles, organizations, editorials, reviews };
   }
 }

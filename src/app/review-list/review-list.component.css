@@ -1,0 +1,13 @@
+mat-list {
+    width: 80%;
+    height: 80%;
+}
+
+::slotted(*) {
+    font-weight: bold;
+  }
+
+.textContent {
+    padding: 5px;
+    overflow: visible;
+}

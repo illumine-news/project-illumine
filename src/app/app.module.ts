@@ -12,6 +12,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from 'app/app.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
@@ -23,9 +24,11 @@ import { OrganizationListComponent } from 'app/organization-list/organization-li
 import { OrganizationDetailComponent } from 'app/organization-detail/organization-detail.component';
 import { EditorialDetailComponent } from 'app/editorial-detail/editorial-detail.component';
 import { EditorialListComponent } from 'app/editorial-list/editorial-list.component';
+import { ReviewListComponent } from './review-list/review-list.component';
 
 import { MessagesComponent } from 'app/messages/messages.component';
 import { InMemoryDataService } from 'app/services/in-memory-data-service';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { InMemoryDataService } from 'app/services/in-memory-data-service';
     OrganizationSearchComponent,
     ArticleSearchComponent,
     EditorialDetailComponent,
-    EditorialListComponent
+    EditorialListComponent,
+    ReviewListComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +59,8 @@ import { InMemoryDataService } from 'app/services/in-memory-data-service';
     MatSortModule,
     CdkTableModule,
     MatPaginatorModule,
-    MatGridListModule
+    MatGridListModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

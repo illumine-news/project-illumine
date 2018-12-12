@@ -45,3 +45,7 @@ table {
     background-color: gray !important;
     color: white;
   }
+
+  .articleLink {
+    cursor: pointer;
+  }

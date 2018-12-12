@@ -7,6 +7,7 @@ import { OrganizationListComponent } from 'app/organization-list/organization-li
 import { OrganizationDetailComponent } from 'app/organization-detail/organization-detail.component';
 import { EditorialListComponent } from 'app/editorial-list/editorial-list.component';
 import { EditorialDetailComponent } from './editorial-detail/editorial-detail.component';
+import { ReviewListComponent } from './review-list/review-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'editorials', component: EditorialListComponent},
   { path: 'editorials/:id', component: EditorialDetailComponent},
   { path: 'organizations', component: OrganizationListComponent },
-  { path: 'organization-detail/:id', component: OrganizationDetailComponent}
+  { path: 'organization-detail/:id', component: OrganizationDetailComponent},
+  { path: 'reviews', component: ReviewListComponent},
+  { path: 'reviews/:articleId', component: ReviewListComponent}
 ];
 
 @NgModule({
