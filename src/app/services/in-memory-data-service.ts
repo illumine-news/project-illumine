@@ -50,16 +50,16 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 30, editorialName: 'Peer review in journalism', authorName: "Jason Statham", organizationName: "Reuters", datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
     const reviews = [
-      { id: 31, articleName: 'What went wrong in 2016', contributorId: 41, score: 75, text: this.reviewTextGood },
-      { id: 32, articleName: 'What went wrong in 2016', contributorId: 42, score: 92, text: this.reviewTextGood },
-      { id: 33, articleName: 'What went wrong in 2016', contributorId: 43, score: 38, text: this.reviewTextBad },
-      { id: 34, articleName: 'What went wrong in 2016', contributorId: 44, score: 14, text: this.reviewTextBad },
-      { id: 35, articleName: 'What went wrong in 2016', contributorId: 45, score: 45, text: this.reviewTextBad },
-      { id: 36, articleName: 'What went wrong in 2016', contributorId: 46, score: 86, text: this.reviewTextGood },
-      { id: 37, articleName: 'What went wrong in 2016', contributorId: 47, score: 56, text: this.reviewTextBad },
-      { id: 38, articleName: 'What went wrong in 2016', contributorId: 48, score: 73, text: this.reviewTextGood },
-      { id: 39, articleName: 'What went wrong in 2016', contributorId: 49, score: 79, text: this.reviewTextGood },
-      { id: 40, articleName: 'What went wrong in 2016', contributorId: 50, score: 89, text: this.reviewTextGood }
+      { id: 31, articleId: 5, articleName: 'What went wrong in 2016', contributorId: 41, score: 75, text: this.reviewTextGood },
+      { id: 32, articleId: 5,  articleName: 'What went wrong in 2016', contributorId: 42, score: 92, text: this.reviewTextGood },
+      { id: 33, articleId: 5,  articleName: 'What went wrong in 2016', contributorId: 43, score: 38, text: this.reviewTextBad },
+      { id: 34, articleId: 5,  articleName: 'What went wrong in 2016', contributorId: 44, score: 14, text: this.reviewTextBad },
+      { id: 35, articleId: 5,  articleName: 'What went wrong in 2016', contributorId: 45, score: 45, text: this.reviewTextBad },
+      { id: 36, articleId: 6,  articleName: 'What went wrong in 2016', contributorId: 46, score: 86, text: this.reviewTextGood },
+      { id: 37, articleId: 6,  articleName: 'What went wrong in 2016', contributorId: 47, score: 56, text: this.reviewTextBad },
+      { id: 38, articleId: 6,  articleName: 'What went wrong in 2016', contributorId: 48, score: 73, text: this.reviewTextGood },
+      { id: 39, articleId: 6,  articleName: 'What went wrong in 2016', contributorId: 49, score: 79, text: this.reviewTextGood },
+      { id: 40, articleId: 6,  articleName: 'What went wrong in 2016', contributorId: 50, score: 89, text: this.reviewTextGood }
     ]
 
     return { articles, organizations, editorials, reviews };

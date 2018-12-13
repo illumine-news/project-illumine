@@ -65,12 +65,12 @@ private articlesUrl = 'api/articles';
   }
 
   /* GET articles whose name contains search term */
-searchArticles(term: string): Observable<Article[]> {
+  searchArticles(term: string): Observable<Article[]> {
   if (!term.trim()) {
     // if not search term, return empty article array.
     return of([]);
   }
-  return this.http.get<Article[]>(`${this.articlesUrl}/?name=${term}`).pipe(
+  return this.http.get<Article[]>(`${this.articlesUrl}/?articleName=${term}`).pipe(
     tap(_ => this.log(`found articles matching "${term}"`)),
     catchError(this.handleError<Article[]>('searchArticles', []))
   );

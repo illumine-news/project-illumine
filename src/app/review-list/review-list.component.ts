@@ -20,24 +20,32 @@ export class ReviewListComponent implements OnInit {
   reviews: Review[];
 
   constructor(
-    private route: ActivatedRoute,
-    private reviewService: ReviewService,
-    private articleService: ArticleService) { 
+    private reviewService: ReviewService) { 
   }
 
   ngOnInit() {
-    this.getarticle();
+    //this.getarticle();
     this.getReviews();
   }
 
   getReviews(): void {
-    this.reviewService.getreviews()
+    //if (this.article)
+    //{
+      //this.reviewService.getreviewsforarticleId(this.article.id)
+      //.subscribe(retrievedReviews => this.reviews = retrievedReviews)
+      //.add(console.log(this.reviews));
+    //}
+    //else
+    //{
+      this.reviewService.getreviews()
       .subscribe(retrievedReviews => this.reviews = retrievedReviews);
+    //}
   }
 
-  getarticle(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.articleService.getArticle(id)
-      .subscribe(article => this.article = article);
-  }
+  //TODO: see if I can pass the article from article list
+  // getarticle(): void {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.articleService.getArticle(id)
+  //     .subscribe(article => this.article = article);
+  // }
 }

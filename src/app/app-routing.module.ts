@@ -14,12 +14,14 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'articles', component: ArticleListComponent },
   { path: 'articles/:id', component: ArticleDetailComponent},
+  //{ path: 'articles/:id/reviews', component: ReviewListComponent},
   { path: 'editorials', component: EditorialListComponent},
   { path: 'editorials/:id', component: EditorialDetailComponent},
   { path: 'organizations', component: OrganizationListComponent },
   { path: 'organization-detail/:id', component: OrganizationDetailComponent},
   { path: 'reviews', component: ReviewListComponent},
-  { path: 'reviews/:articleId', component: ReviewListComponent}
+  { path: 'reviews/:id', component: ReviewListComponent},
+  //{ path: 'reviews/:reviewId', component: ReviewDetailComponent} //TODO
 ];
 
 @NgModule({

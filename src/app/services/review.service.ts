@@ -22,16 +22,17 @@ export class ReviewService {
     private messageService: MessageService
     ) { }
 
-private reviewsUrl = 'api/reviews';
+private reviewsUrl = 'api/reviews/';
+//private reviewsForArticleUrl = 'api/reviews/';
 
 //TODO: implement getting only the corresponding reviews  
-// getreviewsforarticleId(id: number): Observable<Review[]> {
-  //   const url = `${this.reviewsUrl}/${id}`;
-  //   return this.http.get<Review>(url).pipe(
-  //     tap(_ => this.log(`fetched reviews for article id=${id}`)),
-  //     catchError(this.handleError<Review>(`getreviews article id=${id}`))
-  //   );
-  // }
+// getreviewsforarticleId(articleId: number): Observable<Review[]> {
+//     const url = `${this.reviewsForArticleUrl}/${articleId}`;
+//     return this.http.get<Review[]>(url).pipe(
+//       tap(_ => this.log(`fetched reviews for article id=${articleId}`)),
+//       catchError(this.handleError<Review[]>(`getreviews article id=${articleId}`))
+//     );
+//   }
 
   getreviews(): Observable<Review[]> {
    return this.http.get<Review[]>(this.reviewsUrl)

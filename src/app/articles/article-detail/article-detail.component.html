@@ -7,7 +7,11 @@
       </label>
     </div>
     <div><span>rating: </span>TBD</div>
-  </div>
-<!--TO DO: embed modified reviews component here for each article-->
-  <button (click)="goBack()">go back</button>
+    <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
+
+  <div class="flex-item" id="reviewsContainer">
+  <app-review-list [article]=article></app-review-list>
+  </div>
+  </div>
+  
