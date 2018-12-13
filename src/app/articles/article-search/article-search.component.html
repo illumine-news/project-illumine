@@ -3,11 +3,34 @@
   
     <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
   
-    <ul class="search-result">
+<!--basic-->
+      <ul class="search-result">
       <li *ngFor="let article of articles$ | async" >
-        <a routerLink="./articles/{{article.id}}">
+        <a routerLink="./{{article.id}}">
           {{article.articleName}}
         </a>
       </li>
     </ul>
   </div>
+
+<!--advanced but not working. See issue #73-->
+   <!----<ul class="search-result">
+      <li *ngFor="let article of articles$ | async" >
+        <div *ngIf="article; then articleList; else notFound">
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #articleList>
+    <a routerLink="./{{article.id}}"></a>
+  </ng-template>
+  
+  <ng-template #elseWhere>
+  <a routerLink="./articles/{{article.id}}">{{article.articleName}}</a>
+  </ng-template>
+
+  <ng-template #notFound>
+  <div>NOT FOUND</div>
+  </ng-template>-->
+

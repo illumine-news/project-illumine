@@ -1,10 +1,17 @@
-<h1>Reviews</h1>
+<h2>Reviews</h2>
 <div *ngIf="article">
-<h2>{{article.articleName}}</h2>
+<h3>{{article.articleName}}</h3>
 </div>
-<mat-list>
-  <mat-list-item *ngFor="let review of reviews">
-    <h2 matLine>{{review.id}} - {{review.score}}</h2>
+
+<ul class="search-result">
+<div>
+  <mat-list>
+  <mat-list-item *ngFor="let review of reviews$ | async">
+    <h3 matLine>
+      <!---<a routerLink="./reviews">ID: {{review.id}} - Name: {{article.articleName}} - Score: {{review.score}}</a>-->
+      <h5>ID: {{review.id}} - Name: {{review.articleName}} - Score: {{review.score}}</h5>
+    </h3>
+    
     <p matLine>
       <span> 
       <div class="textContent" [innerHTML] = review.text></div>
@@ -12,3 +19,4 @@
     </p>
   </mat-list-item>
 </mat-list>
+</div>

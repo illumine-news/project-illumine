@@ -23,18 +23,21 @@ export class ReviewService {
     ) { }
 
 private reviewsUrl = 'api/reviews/';
-//private reviewsForArticleUrl = 'api/reviews/';
 
-//TODO: implement getting only the corresponding reviews  
-// getreviewsforarticleId(articleId: number): Observable<Review[]> {
-//     const url = `${this.reviewsForArticleUrl}/${articleId}`;
-//     return this.http.get<Review[]>(url).pipe(
-//       tap(_ => this.log(`fetched reviews for article id=${articleId}`)),
-//       catchError(this.handleError<Review[]>(`getreviews article id=${articleId}`))
-//     );
-//   }
+getreviewsforarticle(articleId: any): Observable<Review[]> {
+  if (!articleId)
+  {
+    console.log("Article ID not found");
+    return of ([]);
+  }
+  console.log("SERVICE: Article ID is..." + articleId)
+  return this.http.get<Review[]>(`${this.reviewsUrl}/?articleId=${articleId}`).pipe(
+  tap(_ => this.log(`found reviews matching "${articleId}"`)),
+  catchError(this.handleError<Review[]>('getReviewsForArticle', []))
+  );
+}  
 
-  getreviews(): Observable<Review[]> {
+getreviews(): Observable<Review[]> {
    return this.http.get<Review[]>(this.reviewsUrl)
    .pipe(
     tap(reviews => this.log('fetched reviews')), 

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'articles', component: ArticleListComponent },
   { path: 'articles/:id', component: ArticleDetailComponent},
-  //{ path: 'articles/:id/reviews', component: ReviewListComponent},
+  { path: 'articles/:id/reviews', component: ReviewListComponent},
   { path: 'editorials', component: EditorialListComponent},
   { path: 'editorials/:id', component: EditorialDetailComponent},
   { path: 'organizations', component: OrganizationListComponent },
