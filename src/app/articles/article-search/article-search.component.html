@@ -18,7 +18,6 @@
       <li *ngFor="let article of articles$ | async">
         <!----<div *ngIf="1>2; then articleList; else elseWhere"></div>-->
          <a routerLink="/articles/{{article.id}}">{{article.articleName}}</a>
-        
       </li>
     </ul>
   </div>

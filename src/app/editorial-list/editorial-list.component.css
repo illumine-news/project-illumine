@@ -1,8 +1,17 @@
-.table {
-    margin: 0 0 2em 0;
-    height: 300px;
+  .editorialName {
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+    font-size: x-large;
   }
 
-  .editorialLink {
-    cursor: pointer;
+  mat-list-item:nth-child(odd) {
+    background: #CCC;
+  }
+
+  mat-list-item:nth-child(odd):hover {
+    background: #CCC;
+  }
+
+  mat-list-item:nth-child(even):hover {
+    background: initial;
   }

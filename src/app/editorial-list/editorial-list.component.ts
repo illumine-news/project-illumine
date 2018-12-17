@@ -14,32 +14,33 @@ import { MatPaginator } from '@angular/material/paginator';
 
 export class EditorialListComponent implements OnInit {
   
-  @Input() displayedColumns: string[] = ['editorialName', 'authorName', 'organizationName', 'datePublished']; //TODO: make dynamic
-  @Input() itemsPerPage: number[];
+  editorials: Editorial[];
+  //@Input() displayedColumns: string[] = ['editorialName', 'authorName', 'organizationName', 'datePublished']; //TODO: make dynamic
+  //@Input() itemsPerPage: number[];
 
-  dataSource = new MatTableDataSource<Editorial>();
-  sortedData;
+  //dataSource = new MatTableDataSource<Editorial>();
+  //sortedData;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  //@ViewChild(MatPaginator) paginator: MatPaginator;
+  //@ViewChild(MatSort) sort: MatSort;
 
   constructor(private editorialService: EditorialService,
     private organizationService: OrganizationService) { }
 
   ngOnInit() {
     this.getEditorials();
-    this.dataSource.paginator = this.paginator;
+    //this.dataSource.paginator = this.paginator;
     //this.dataSource.sort = this.sort; //TODO: implement sorting
   }
 
   getEditorials(): void {
     this.editorialService.geteditorials()
-      .subscribe(editorials => this.dataSource.data = editorials);
+      .subscribe(retrievedEditorials => this.editorials = retrievedEditorials);
   }
 
-  getItemsPerPage(): number[] {
-    return this.itemsPerPage != null ? this.itemsPerPage : [10];
-  }
+  // getItemsPerPage(): number[] {
+  //   return this.itemsPerPage != null ? this.itemsPerPage : [10];
+  // }
 
   // add(name: string): void {
   //   name = name.trim();

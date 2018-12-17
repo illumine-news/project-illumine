@@ -30,10 +30,10 @@
                     mediocre: (article.illumineScore > 39 && article.illumineScore < 60)}">{{article.illumineScore}}</td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [pageSizeOptions]=getItemsPerPage() showFirstLastButtons></mat-paginator>
+<mat-paginator [pageSizeOptions]=getItemsPerPage() class="paginator"></mat-paginator>
 <!----<ul class="articles">
     <li *ngFor="let article of articles">
       <a routerLink="/detail/{{article.id}}">
