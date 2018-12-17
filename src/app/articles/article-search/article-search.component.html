@@ -4,20 +4,21 @@
     <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
   
 <!--basic-->
-      <ul class="search-result">
+      <!----<ul class="search-result">
       <li *ngFor="let article of articles$ | async" >
         <a routerLink="./{{article.id}}">
           {{article.articleName}}
         </a>
       </li>
     </ul>
-  </div>
+  </div>-->
 
 <!--advanced but not working. See issue #73-->
-   <!----<ul class="search-result">
-      <li *ngFor="let article of articles$ | async" >
-        <div *ngIf="article; then articleList; else notFound">
-        </div>
+   <ul class="search-result">
+      <li *ngFor="let article of articles$ | async">
+        <!----<div *ngIf="1>2; then articleList; else elseWhere"></div>-->
+         <a routerLink="/articles/{{article.id}}">{{article.articleName}}</a>
+        
       </li>
     </ul>
   </div>
@@ -32,5 +33,5 @@
 
   <ng-template #notFound>
   <div>NOT FOUND</div>
-  </ng-template>-->
+  </ng-template>
 

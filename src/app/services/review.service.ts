@@ -30,7 +30,6 @@ getreviewsforarticle(articleId: any): Observable<Review[]> {
     console.log("Article ID not found");
     return of ([]);
   }
-  console.log("SERVICE: Article ID is..." + articleId)
   return this.http.get<Review[]>(`${this.reviewsUrl}/?articleId=${articleId}`).pipe(
   tap(_ => this.log(`found reviews matching "${articleId}"`)),
   catchError(this.handleError<Review[]>('getReviewsForArticle', []))

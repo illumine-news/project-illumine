@@ -8,6 +8,7 @@ import {
 
 import { Article } from 'app/domain/article';
 import { ArticleService } from 'app/services/article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-search',
@@ -18,12 +19,15 @@ export class ArticleSearchComponent implements OnInit {
   articles$: Observable<Article[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private articleService: ArticleService) {}
+  constructor(
+    private router: Router,
+    private articleService: ArticleService) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
   }
+
 
   ngOnInit(): void {
     this.articles$ = this.searchTerms.pipe(
