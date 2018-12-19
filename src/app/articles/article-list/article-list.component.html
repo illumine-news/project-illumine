@@ -1,4 +1,3 @@
-<form f>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
 
   <ng-container matColumnDef="articleName">
@@ -44,11 +43,10 @@
     </li>
   </ul> -->
   <div>
-  <app-article-search></app-article-search>
+  <!----<app-article-search></app-article-search>-->
       <!--TODO: add author-->
       <!-- (click) passes input value to add() and then clears the input -->
       <!----<button (click)="add(articleName.value); articleName.value=''">
         add
       </button>-->
     </div>
-    </form>

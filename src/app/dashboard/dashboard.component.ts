@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'app/domain/article';
-import { ArticleService } from 'app/services/article.service';
 import { Organization } from 'app/domain/organization';
 import { OrganizationService } from 'app/services/organization.service';
+import { ResponsiveService } from 'app/services/responsive.service';
 
 export interface Tile {
   color: string;
@@ -14,20 +14,23 @@ export interface Tile {
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: [ './dashboard.component.css' ],
+  providers: [ResponsiveService]
 })
 export class DashboardComponent implements OnInit {
   
   articles: Article[] = [];
   organizations: Organization[] = [];
+  private isMobile: Boolean;
 
   constructor(
-    private articleService: ArticleService,
+    private responsiveService: ResponsiveService,
     private organizationService: OrganizationService,
     ) { }
 
   ngOnInit() {
     this.getOrganizations();
+    this.isMobile = this.responsiveService.mobileCheckRegEx();
   }
 
   getOrganizations(): void {

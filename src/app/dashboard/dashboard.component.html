@@ -1,5 +1,5 @@
 
-<div class="flex-container" id = "topLayoutContainer">
+<div *ngIf="!isMobile" class="flex-container" id = "topLayoutContainer">
   
     <div class="flex-item" id = "articlesContainer">
       <h3>Recent Articles</h3>
@@ -7,6 +7,20 @@
     </div>
     
   <div class="flex-item" id = "editorialsContainer">
+  <h3>Editorials</h3>
+  <app-editorial-list></app-editorial-list>
+  </div>
+
+</div>
+
+<div *ngIf="isMobile" class="flex-container-vertical" id = "topLayoutContainer">
+
+    <div class="flex-item" id = "articlesContainer">
+      <h3>Recent Articles</h3>
+      <app-article-list [itemsPerPage]=[5] [displayedColumns]="['articleName', 'authorName', 'illumineScore']"></app-article-list>
+    </div>
+    
+  <div class="flex-item" id="editorialsContainer">
   <h3>Editorials</h3>
   <app-editorial-list></app-editorial-list>
   </div>

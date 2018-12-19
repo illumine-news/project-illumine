@@ -1,14 +1,27 @@
 .flex-container {
   display: flex;
   width: 90%;
+  height: 100%;
   flex-wrap: nowrap;
   justify-content: space-around;
   flex-flow: initial;
 }
 
+.flex-container-vertical {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-flow: initial;
+  flex-direction: column;
+  flex-basis: auto;
+  align-content: flex-start;
+}
+
 .flex-item {
-  width: 45%;
+  width: 90%;
   padding: 20px;
+  flex-shrink: 10;
 }
 
 table {
@@ -16,18 +29,6 @@ table {
   list-style-type: none;
   padding: 0;
   width: 50%;
-}
-
-.bad {
-  background-color: red;
-}
-
-.mediocre {
-  background-color: yellow;
-}
-
-.good {
-  background-color: green;
 }
 
 .mat-cell-centered {

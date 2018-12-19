@@ -12,7 +12,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from 'app/app.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
