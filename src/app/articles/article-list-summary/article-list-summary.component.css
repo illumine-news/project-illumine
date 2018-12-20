@@ -1,10 +1,23 @@
 /* articlesComponent's private CSS styles */
- table {
+table {
     margin: 0 0 2em 0;
   }
 
+.topLeftCell {
+  cursor: pointer;
+  border-top: 2px solid black;
+}
+
+.topRow {
+  border-top: 2px solid black;
+}
+
   td {
     text-align: center;
+  }
+
+  th {
+    display: none;
   }
 
   .bad {

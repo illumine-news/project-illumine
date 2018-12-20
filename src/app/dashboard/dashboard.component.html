@@ -2,8 +2,8 @@
 <div *ngIf="!isMobile" class="flex-container" id = "topLayoutContainer">
   
     <div class="flex-item" id = "articlesContainer">
-      <h3>Recent Articles</h3>
-      <app-article-list [itemsPerPage]=[5] [displayedColumns]="['articleName', 'authorName', 'illumineScore']"></app-article-list>
+      <h3 class="tableHeader">Recent Articles</h3>
+      <app-article-list-summary [itemsPerPage]=[5] [displayedColumns]="['articleName', 'authorName', 'illumineScore']" class="articleSpacing"></app-article-list-summary>
     </div>
     
   <div class="flex-item" id = "editorialsContainer">
@@ -13,11 +13,11 @@
 
 </div>
 
-<div *ngIf="isMobile" class="flex-container-vertical" id = "topLayoutContainer">
+<div *ngIf="isMobile" class="flex-container-vertical" id="topLayoutContainer">
 
     <div class="flex-item" id = "articlesContainer">
-      <h3>Recent Articles</h3>
-      <app-article-list [itemsPerPage]=[5] [displayedColumns]="['articleName', 'authorName', 'illumineScore']"></app-article-list>
+      <h3 class="tableHeader">Recent Articles</h3>
+      <app-article-list-summary [itemsPerPage]=[5] [displayedColumns]="['articleName', 'authorName', 'illumineScore']" class="articleSpacing"></app-article-list-summary>
     </div>
     
   <div class="flex-item" id="editorialsContainer">

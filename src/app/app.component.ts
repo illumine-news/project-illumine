@@ -26,8 +26,6 @@ export class AppComponent {
       path = "assets/img/Placeholder_Illumine_Logo.png";
     }
 
-    console.log("Path is: " + path);
-
     return path;
   }
 }

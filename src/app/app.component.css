@@ -15,7 +15,8 @@ h1 {
     padding-top: 0;
   }
 
-  nav {
+  .header {
+    width: 100%;
     border-style: solid;
     border-color: white white black white;
   }

@@ -28,6 +28,7 @@ import { ReviewListComponent } from './review-list/review-list.component';
 
 import { MessagesComponent } from 'app/messages/messages.component';
 import { InMemoryDataService } from 'app/services/in-memory-data-service';
+import { ArticleListSummaryComponent } from 'app/articles/article-list-summary/article-list-summary.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { InMemoryDataService } from 'app/services/in-memory-data-service';
     ArticleSearchComponent,
     EditorialDetailComponent,
     EditorialListComponent,
-    ReviewListComponent
+    ReviewListComponent,
+    ArticleListSummaryComponent
   ],
   imports: [
     CommonModule,

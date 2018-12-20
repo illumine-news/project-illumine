@@ -24,11 +24,24 @@
   flex-shrink: 10;
 }
 
+.tableHeader {
+  margin: 20px 0 0 5px;
+  z-index: 1;
+  position: relative;
+}
+
+.articleSpacing {
+  position: relative;
+  top: -30px;
+}
+
 table {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 50%;
+  z-index: -1;
+  position: relative;
 }
 
 .mat-cell-centered {
@@ -57,3 +70,4 @@ button.delete {
   background-color: gray !important;
   color: white;
 }
+
