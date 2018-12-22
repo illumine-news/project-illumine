@@ -20,6 +20,9 @@ export class ReviewListComponent implements OnInit {
   reviews: Review[];
   reviews$: Observable<Review[]>;
   private searchTerms = new Subject<string>();
+  
+  //TODO: remove
+  tempReviewText: string = `<p>GOOD: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue porttitor quam eu dignissim. Morbi fermentum eget ex ut ullamcorper. Pellentesque sit amet erat a est auctor gravida. Nulla egestas commodo ullamcorper. Proin ornare tempus ante in ultrices. Proin feugiat, dolor a ultrices iaculis, mi risus semper orci, vitae lobortis est mi at libero. Donec imperdiet elit nec quam iaculis, eu vehicula diam lacinia. Nam lacinia ex et arcu tincidunt, et iaculis mi euismod.</p>`
 
   constructor(
     private reviewService: ReviewService) { 

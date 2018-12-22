@@ -1,22 +1,19 @@
+<p [innerHTML] = this.tempReviewText></p>
 <h2>Reviews</h2>
+
 <div *ngIf="article">
 <h3>{{article.articleName}}</h3>
 </div>
 
-<ul class="search-result">
-<div>
   <mat-list>
   <mat-list-item *ngFor="let review of reviews$ | async">
-    <h3 matLine>
-      <!---<a routerLink="./reviews">ID: {{review.id}} - Name: {{article.articleName}} - Score: {{review.score}}</a>-->
-      <h5>ID: {{review.id}} - Name: {{review.articleName}} - Score: {{review.score}}</h5>
-    </h3>
     
-    <p matLine>
-      <span> 
-      <div class="textContent" [innerHTML] = review.text></div>
-     </span>
-    </p>
+    <h5 mat-line class="matHeader">ID: {{review.id}} - Name: {{review.articleName}} - Score: {{review.score}}</h5>
+
+      <div mat-line>
+        <div [innerHTML] = review.text class="reviewText"> 
+        </div>
+      </div>
+   
   </mat-list-item>
 </mat-list>
-</div>

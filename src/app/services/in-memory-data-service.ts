@@ -7,7 +7,7 @@ export class InMemoryDataService implements InMemoryDbService {
   
   <p>Praesent quis eros id leo ullamcorper vulputate. Etiam at tortor convallis, imperdiet tortor a, euismod velit. Aenean mattis leo sed purus pulvinar lobortis. Vestibulum mi tellus, luctus ac consequat et, mollis at est. Aliquam et orci tellus. Quisque pretium feugiat nibh at malesuada. Nulla id est non lorem cursus porttitor.</p>`
 
-  reviewTextGood: string = `<p>GOOD: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue porttitor quam eu dignissim. Morbi fermentum eget ex ut ullamcorper. Pellentesque sit amet erat a est auctor gravida. Nulla egestas commodo ullamcorper. Proin ornare tempus ante in ultrices. Proin feugiat, dolor a ultrices iaculis, mi risus semper orci, vitae lobortis est mi at libero. Donec imperdiet elit nec quam iaculis, eu vehicula diam lacinia. Nam lacinia ex et arcu tincidunt, et iaculis mi euismod.</p>`
+  reviewTextGood: string = `GOOD: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue porttitor quam eu dignissim. Morbi fermentum eget ex ut ullamcorper. Pellentesque sit amet erat a est auctor gravida. Nulla egestas commodo ullamcorper. Proin ornare tempus ante in ultrices. Proin feugiat, dolor a ultrices iaculis, mi risus semper orci, vitae lobortis est mi at libero. Donec imperdiet elit nec quam iaculis, eu vehicula diam lacinia. Nam lacinia ex et arcu tincidunt, et iaculis mi euismod.`
 
   reviewTextBad: string = `<p>BAD: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue porttitor quam eu dignissim. Morbi fermentum eget ex ut ullamcorper. Pellentesque sit amet erat a est auctor gravida. Nulla egestas commodo ullamcorper. Proin ornare tempus ante in ultrices. Proin feugiat, dolor a ultrices iaculis, mi risus semper orci, vitae lobortis est mi at libero. Donec imperdiet elit nec quam iaculis, eu vehicula diam lacinia. Nam lacinia ex et arcu tincidunt, et iaculis mi euismod.</p>`
 
@@ -51,15 +51,16 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     const reviews = [
       { id: 31, articleId: 1, articleName: 'On Geralt and Toe Stubbing', contributorId: 41, score: 75, text: this.reviewTextGood },
-      { id: 32, articleId: 2,  articleName: 'Wines of Toussant', contributorId: 42, score: 92, text: this.reviewTextGood },
-      { id: 33, articleId: 3,  articleName: 'Mechanical Man', contributorId: 43, score: 38, text: this.reviewTextBad },
-      { id: 34, articleId: 4,  articleName: 'Moonlighters', contributorId: 44, score: 14, text: this.reviewTextBad },
-      { id: 35, articleId: 5,  articleName: 'How to build poison tolerance', contributorId: 45, score: 45, text: this.reviewTextBad },
-      { id: 36, articleId: 6,  articleName: 'Guide to Griefing', contributorId: 46, score: 86, text: this.reviewTextGood },
-      { id: 37, articleId: 7,  articleName: 'Presidents and Pancakes', contributorId: 47, score: 56, text: this.reviewTextBad },
-      { id: 38, articleId: 8,  articleName: 'Righteous Fury', contributorId: 48, score: 73, text: this.reviewTextGood },
-      { id: 39, articleId: 9,  articleName: 'What went wrong in 2016', contributorId: 49, score: 79, text: this.reviewTextGood },
-      { id: 40, articleId: 10,  articleName: 'Neon Demons', contributorId: 50, score: 89, text: this.reviewTextGood }
+      { id: 32, articleId: 2, articleName: 'Wines of Toussant', contributorId: 42, score: 92, text: this.reviewTextGood },
+      { id: 33, articleId: 3, articleName: 'Mechanical Man', contributorId: 43, score: 38, text: this.reviewTextBad },
+      { id: 34, articleId: 4, articleName: 'Moonlighters', contributorId: 44, score: 14, text: this.reviewTextBad },
+      { id: 35, articleId: 5, articleName: 'How to build poison tolerance', contributorId: 45, score: 45, text: this.reviewTextBad },
+      { id: 36, articleId: 6, articleName: 'Guide to Griefing', contributorId: 46, score: 86, text: this.reviewTextGood },
+      { id: 37, articleId: 7, articleName: 'Presidents and Pancakes', contributorId: 47, score: 56, text: this.reviewTextBad },
+      { id: 38, articleId: 8, articleName: 'Righteous Fury', contributorId: 48, score: 73, text: this.reviewTextGood },
+      { id: 39, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, score: 79, text: this.reviewTextGood },
+      { id: 40, articleId: 10, articleName: 'Neon Demons', contributorId: 50, score: 89, text: this.reviewTextGood },
+      { id: 41, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, score: 43, text: this.reviewTextBad }
     ]
 
     return { articles, organizations, editorials, reviews };

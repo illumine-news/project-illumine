@@ -1,13 +1,28 @@
 mat-list {
     width: 80%;
     height: 80%;
+    padding: 10px;
 }
 
-::slotted(*) {
-    font-weight: bold;
-  }
+mat-list-item {
+    height: 150px !important;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+}
 
-.textContent {
-    padding: 5px;
-    overflow: visible;
+.matHeader {
+    margin: 5px;
+    align-self: flex-start;
+}
+
+.reviewText {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    text-anchor: start;
+    margin: 5px;
 }
