@@ -2,7 +2,13 @@
 h1 {
     font-size: 1.2em;
     color: #999;
-    margin-bottom: 0;
+    align-self: flex-start;
+    display: inline-block;
+    margin: 0 0 -20px -50px;
+  }
+
+  img {
+    margin-bottom: -20px;
   }
   
   div {
