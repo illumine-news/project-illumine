@@ -22,7 +22,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 6, articleName: 'Guide to Griefing', authorName: "Otzdarva", organizationName: "The Atlantic", datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
       { id: 7, articleName: 'Presidents and Pancakes', authorName: "George Stephanopolous", organizationName: "MSNBC", datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
       { id: 8, articleName: 'Righteous Fury', authorName: "Brad Pitt", organizationName: "CNN", datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
-      { id: 9, articleName: 'What went wrong in 2016', authorName: "Nate Silver", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
+      { id: 9, articleName: 'What went wrong in 2016', authorName: "Nate Silver", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82, articleSummary: "Nate Silver analyzes why the media overestimated Donal Trump's chance for victory in the Presential Election." },
       { id: 10, articleName: 'Neon Demons', authorName: "Elle Fanning", organizationName: "Reuters", datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
     const organizations = [

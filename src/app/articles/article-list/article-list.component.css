@@ -7,16 +7,34 @@
     text-align: center;
   }
 
-  .bad {
+.bad {
     background-color: #ffc2b3;
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
   }
 
   .mediocre {
     background-color: #ffffb3;
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
   }
 
   .good {
     background-color: #c2f0c2;
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
   }
 
   .mat-cell-centered {

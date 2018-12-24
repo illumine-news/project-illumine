@@ -5,4 +5,5 @@ export class Article {
     organizationName: string;
     datePublished: Date;
     illumineScore: number;
+    articleSummary: string;
 }

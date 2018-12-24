@@ -1,3 +1,75 @@
 .illumineDetails {
     margin: 10px;
 }
+
+.illumineScore {
+    width: 30px;
+    height: 30px;
+    background: blue;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.bad {
+    background-color: #ffc2b3;
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .mediocre {
+    background-color: #ffffb3;
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .good {
+    background-color: #c2f0c2;
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+  }
+
+.label {
+    font-weight: bold;
+    float: left;
+    text-align: right;
+    padding: 0px 5px;
+}
+
+.section {
+    padding: 10px;
+}
+
+.flex-container-vertical {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-flow: initial;
+    flex-direction: column;
+    flex-basis: auto;
+    align-content: flex-start;
+  }
+  
+  .flex-item {
+    width: 90%;
+    padding: 20px;
+    flex-shrink: 10;
+  }

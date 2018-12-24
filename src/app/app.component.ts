@@ -19,11 +19,11 @@ export class AppComponent {
     let path;
 
     if (this.isMobile) {
-      path = "assets/img/Placeholder_Illumine_Logo_fire_small.png";
+      path = "assets/img/Placeholder_Illumine_Logo_simple_candle_borderless.png";
     }
     else
     {
-      path = "assets/img/Placeholder_Illumine_Logo_fire_small.png";
+      path = "assets/img/Placeholder_Illumine_Logo_simple_candle_borderless.png";
     }
 
     return path;
