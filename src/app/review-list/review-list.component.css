@@ -16,6 +16,8 @@ mat-list-item {
 .matHeader {
     margin: 5px;
     align-self: flex-start;
+    font-weight: bold;
+    font-size: large;
 }
 
 .reviewText {

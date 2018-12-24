@@ -8,7 +8,9 @@
   <mat-list>
   <mat-list-item *ngFor="let review of reviews$ | async">
     
-    <h5 mat-line class="matHeader">ID: {{review.id}} - Name: {{review.articleName}} - Score: {{review.score}}</h5>
+    <div mat-line>
+    <h5 class="matHeader">ID: {{review.id}} - Name: {{review.articleName}} - Score: {{review.score}}</h5>
+    </div>
 
       <div mat-line>
         <div [innerHTML] = review.text class="reviewText"> 
