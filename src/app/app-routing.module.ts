@@ -10,7 +10,7 @@ import { EditorialDetailComponent } from './editorial-detail/editorial-detail.co
 import { ReviewListComponent } from './review-list/review-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: '', pathMatch: 'full', redirectTo: 'dashboard'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'articles', component: ArticleListComponent },
   { path: 'articles/:id', component: ArticleDetailComponent},
@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'organization-detail/:id', component: OrganizationDetailComponent},
   { path: 'reviews', component: ReviewListComponent},
   { path: 'reviews/:id', component: ReviewListComponent},
+  { path: '**', pathMatch: 'full', redirectTo: 'dashboard'},
   //{ path: 'reviews/:reviewId', component: ReviewDetailComponent} //TODO
 ];
 
