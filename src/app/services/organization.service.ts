@@ -26,9 +26,9 @@ export class OrganizationService {
 private organizationsUrl = 'api/organizations';
 
   getOrganization(id: number): Observable<Organization> {
+    console.log("Getting org for id: " + id);
     const url = `${this.organizationsUrl}/${id}`;
-    return this.http.get<Organization>(url).pipe(
-    );
+    return this.http.get<Organization>(url);
   }
 
   getOrganizations(): Observable<Organization[]> {

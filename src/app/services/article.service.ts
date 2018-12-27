@@ -24,6 +24,7 @@ export class ArticleService {
     ) { }
 
 private articlesUrl = 'api/articles';
+private articlesUrlAlt = 'api/articles/';
 
   getArticle(id: number): Observable<Article> {
     const url = `${this.articlesUrl}/${id}`;
@@ -41,41 +42,42 @@ private articlesUrl = 'api/articles';
    );
   }
 
-  // getIllumineScore(articleId: number): Observable<number> {
-  //   //TODO: query reviews associated with this article ID
-  //   //and get an aggregate of the scores
-  //   //return this.http.get
+  getarticlesfororganization(organizationId: number | string): Observable<Article[]> {
+    if (!organizationId)
+  {
+    console.log("Organization ID not found");
+    return of ([]);
+  }
+  console.log("SERVICE - Org ID: " + organizationId);
+  return this.http.get<Article[]>(`api/reviews/?articleId=9`).pipe(
+  //tap(_ => console.log(`found organizations matching "${organizationId}"`)),
+  //catchError(this.handleError<Article[]>('getArticlesForOrganization', []))
+  );
+  }
 
-  //   Array.prototype.forEach()
+  // addArticle (article: Article): Observable<Article> {
+  //   return this.http.post<Article>(this.articlesUrl, article, httpOptions).pipe(
+  //     tap((article: Article) => this.log(`added article w/ id=${article.id}`)),
+  //     catchError(this.handleError<Article>('addArticle'))
+  //   );
   // }
 
-  // getAssociatedReviews(articleId: number): Review[] {
-  //   reviews.foreach
+  // updateArticle (article: Article): Observable<any> {
+  //   return this.http.put(this.articlesUrl, article, httpOptions).pipe(
+  //     tap(_ => this.log(`updated article id=${article.id}`)),
+  //     catchError(this.handleError<any>('updateArticle'))
+  //   );
   // }
 
-  addArticle (article: Article): Observable<Article> {
-    return this.http.post<Article>(this.articlesUrl, article, httpOptions).pipe(
-      tap((article: Article) => this.log(`added article w/ id=${article.id}`)),
-      catchError(this.handleError<Article>('addArticle'))
-    );
-  }
+  // deleteArticle (article: Article | number): Observable<Article> {
+  //   const id = typeof article === 'number' ? article : article.id;
+  //   const url = `${this.articlesUrl}/${id}`;
 
-  updateArticle (article: Article): Observable<any> {
-    return this.http.put(this.articlesUrl, article, httpOptions).pipe(
-      tap(_ => this.log(`updated article id=${article.id}`)),
-      catchError(this.handleError<any>('updateArticle'))
-    );
-  }
-
-  deleteArticle (article: Article | number): Observable<Article> {
-    const id = typeof article === 'number' ? article : article.id;
-    const url = `${this.articlesUrl}/${id}`;
-
-    return this.http.delete<Article>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted article id=${id}`)),
-      catchError(this.handleError<Article>('deleteArticle'))
-    );
-  }
+  //   return this.http.delete<Article>(url, httpOptions).pipe(
+  //     tap(_ => this.log(`deleted article id=${id}`)),
+  //     catchError(this.handleError<Article>('deleteArticle'))
+  //   );
+  // }
 
   /* GET articles whose name contains search term */
   searchArticles(term: string): Observable<Article[]> {
@@ -94,13 +96,14 @@ private articlesUrl = 'api/articles';
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
+
     return (error: any): Observable<T> => {
    
       // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      console.log(error); // log to console instead
    
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      console.log(`${operation} failed: ${error.message}`);
    
       // Let the app keep running by returning an empty result.
       return of(result as T);

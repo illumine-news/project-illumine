@@ -1,33 +1,45 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Organization } from 'app/domain/organization';
-
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { OrganizationService } from 'app/services/organization.service';
+import { Observable } from 'rxjs';
+import { Article } from 'app/domain/article';
 
-import { OrganizationService }  from 'app/services/organization.service';
- 
 @Component({
   selector: 'app-organization-detail',
   templateUrl: './organization-detail.component.html',
   styleUrls: ['./organization-detail.component.css']
 })
 export class OrganizationDetailComponent implements OnInit {
-  @Input() organization: Organization;
- 
+  organizationId = +this.route.snapshot.paramMap.get('id');
+  organization: Organization;
+  articles: Observable<Article[]>;
+
   constructor(
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
     private location: Location
-  ) {}
- 
+
+  ) { }
+
   ngOnInit(): void {
+    console.log("Executing get org");
     this.getorganization();
+    console.log("Get org result: " + this.organization);
   }
-  
+
+  ngOnChange() {
+    console.log("Checking for org value...");
+    if (this.organization) {
+      console.log("Organization self: " + this.organization);
+    }
+  }
+
   getorganization(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.organizationService.getOrganization(id)
-      .subscribe(organization => this.organization = organization);
+    this.organizationService.getOrganization(this.organizationId)
+      .subscribe(organization => this.organization = organization)
+      .add(console.log("RESULT: " + this.organization));
   }
 
   goBack(): void {
@@ -36,6 +48,6 @@ export class OrganizationDetailComponent implements OnInit {
 
   save(): void {
     this.organizationService.updateOrganization(this.organization)
-    .subscribe(() => this.goBack())
+      .subscribe(() => this.goBack())
   }
 }

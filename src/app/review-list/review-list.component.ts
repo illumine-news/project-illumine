@@ -20,9 +20,6 @@ export class ReviewListComponent implements OnInit {
   reviews: Review[];
   reviews$: Observable<Review[]>;
   private searchTerms = new Subject<string>();
-  
-  //TODO: remove
-  tempReviewText: string = `<p>GOOD: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue porttitor quam eu dignissim. Morbi fermentum eget ex ut ullamcorper. Pellentesque sit amet erat a est auctor gravida. Nulla egestas commodo ullamcorper. Proin ornare tempus ante in ultrices. Proin feugiat, dolor a ultrices iaculis, mi risus semper orci, vitae lobortis est mi at libero. Donec imperdiet elit nec quam iaculis, eu vehicula diam lacinia. Nam lacinia ex et arcu tincidunt, et iaculis mi euismod.</p>`
 
   constructor(
     private reviewService: ReviewService) { 
@@ -30,6 +27,7 @@ export class ReviewListComponent implements OnInit {
 
   ngOnInit() {
     //this.getarticle();
+    console.log(this.article);
     if (this.article)
     {
       this.getReviewsForArticle(this.article.id);
@@ -55,7 +53,7 @@ export class ReviewListComponent implements OnInit {
   }
 
   getReviewsForArticle(articleId: string | number) : void {
-    this.reviews$ = this.reviewService.getreviewsforarticle(this.article.id);
+    this.reviews$ = this.reviewService.getreviewsforarticle(articleId);
     
     //.subscribe(retrievedReviews => this.reviews$ = retrievedReviews);
 }

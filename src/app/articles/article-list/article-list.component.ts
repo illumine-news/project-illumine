@@ -1,12 +1,10 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, SimpleChanges } from '@angular/core';
 import { Article } from 'app/domain/article';
 import { ArticleService } from 'app/services/article.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { OrganizationService } from 'app/services/organization.service';
 import { Organization } from 'app/domain/organization';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
-import { map } from 'rxjs/operators';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
@@ -16,8 +14,24 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 
 export class ArticleListComponent implements OnInit {
+  private _data = new BehaviorSubject<Organization[]>([]);
+
+  // @Input()
+  // set data(value) {
+  //   this._data.next(value);
+  // }
+
+  // get data() {
+  //   return this._data.getValue();
+  // }
+  
+  //@Input() organization: Organization;
+  @Input() organizationId: number | string;
   @Input() displayedColumns: string[] = ['articleName', 'authorName', 'organizationName', 'datePublished', 'illumineScore'];
   @Input() itemsPerPage: number[];
+
+  articles: Article[];
+  articles$: Observable<Article[]>;
 
   dataSource = new MatTableDataSource<Article>();
   sortedData;
@@ -25,13 +39,52 @@ export class ArticleListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private articleService: ArticleService,
-    private organizationService: OrganizationService) { }
+  constructor(private articleService: ArticleService) { }
+
+  // ngOnChanges(changes: SimpleChanges)
+  // {
+  //   console.log("ARTICLE LIST org: " + this.organization);
+  //   if (changes['data']) {
+  //     this.articles$ = this.getArticlesForOrganization(this.organization.id);
+  //   }
+  // }
+
+  ngOnChanges() {
+    console.log("Article List changed$: " + this.articles$);
+    console.log("Article List changed: " + this.articles);
+  }
 
   ngOnInit() {
-    this.getArticles();
+
+    console.log("ORG ID: " + this.organizationId);
+
+    // this._data
+    // .subscribe(x => {
+    //   this.getArticlesForOrganization(this.organizationId);
+    // });
+
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+
+    
+    //console.log(this.articles$);
+
+    //this.organization = new Organization();
+    //this.organization.id = 20;
+
+    if (this.organizationId) {
+      console.log("Getting articles for org");
+      this.getArticlesForOrganization(this.organizationId);
+    }
+    else {
+      console.log("Getting all articles");
+
+      this.getArticles();
+    }
+  }
+
+  getArticlesForOrganization(organizationId: string | number): Observable<Article[]> {
+    return this.articles$ = this.articleService.getarticlesfororganization(organizationId);
   }
 
   getArticles(): void {

@@ -1,18 +1,21 @@
-<ul class="organizations">
-    <li *ngFor="let organization of organizations">
-      <a routerLink="/organization-detail/{{organization.id}}">
-        <span class="badge">{{organization.id}}</span> {{organization.name}}
-      </a>
-      <button class="delete" title="delete organization"
-      (click)="delete(organization)">x</button>
-    </li>
-  </ul>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
+
+  <ng-container matColumnDef="organizationName"> 
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization Name</th>
+    <td mat-cell *matCellDef="let organization" routerLink="/organizations/{{organization.id}}" class="organizationLink">{{organization.name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="organizationScore">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization Score</th>
+    <td mat-cell *matCellDef="let organization" 
+        [ngClass]="{bad: (organization.organizationScore < 40), 
+                    good: (organization.organizationScore > 59), 
+                    mediocre: (organization.organizationScore > 39 && organization.organizationScore < 60)}">{{organization.organizationScore}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]=getItemsPerPage() class="paginator"></mat-paginator>
   <div>
-      <label>Organization name:
-        <input #organizationName />
-      </label>
-      <!-- (click) passes input value to add() and then clears the input -->
-      <button (click)="add(organizationName.value); organizationName.value=''">
-        add
-      </button>
     </div>
