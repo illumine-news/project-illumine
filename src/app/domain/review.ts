@@ -3,6 +3,7 @@ export class Review {
     articleName: string;
     articleId: number;
     contributorId: number;
-    score: number;
+    contributorName: string;
+    reviewScore: number;
     text: string; //TODO: just encapsulate as HTML
 }

@@ -1,31 +1,32 @@
 <div *ngIf="article">
 
     <div class="flex-container-vertical">
-        <h2>{{article.name | uppercase}} Details</h2>
+        <h2>Article Details</h2>
 
       <div class="section">
           <div class="label">Title: </div>
-          <span class="content">{{article.articleName}}</span>
+          <span>{{article.articleName}}</span>
+      </div>
+
+      <div class="section">
+          <div class="label">Author: </div>
+          <span>{{article.authorName}}</span>
       </div>
 
         <div class = "section">
           <div class="label">Summary: </div>
-          <span>{{article.articleSummary}}</span>
+          <span class="flex-container-vertical truncate">{{article.articleSummary}}</span>
         </div>
         
         <div class="section">
           <div class="label">Illumine Score: </div>
+          <!--TODO: replace this score with an actual average/aggregate-->
           <div [ngClass]="{bad: (article.illumineScore < 40), 
                     good: (article.illumineScore > 59), 
-                    mediocre: (article.illumineScore > 39 && article.illumineScore < 60)}">{{article.illumineScore}}</div>
-          
-
+                    mediocre: (article.illumineScore > 39 && article.illumineScore < 60)}">{{article.illumineScore}}
+                    </div>
         </div>
       </div>
-    
-
-    <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button>
 
     <div class="flex-item" id="reviewsContainer">
     <app-review-list [article]=article></app-review-list>

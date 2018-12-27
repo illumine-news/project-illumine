@@ -55,6 +55,7 @@
 
 .section {
     padding: 10px;
+    align-content: flex-start;
 }
 
 .flex-container-vertical {
@@ -66,10 +67,12 @@
     flex-direction: column;
     flex-basis: auto;
     align-content: flex-start;
+    margin: 5px;
   }
   
   .flex-item {
     width: 90%;
     padding: 20px;
     flex-shrink: 10;
+    flex-direction: column;
   }

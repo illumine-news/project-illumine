@@ -6,14 +6,25 @@
 
   <mat-list>
   <mat-list-item *ngFor="let review of reviews$ | async">
-    
-    <div mat-line>
-    <h5 class="matHeader">ID: {{review.id}} - Name: {{review.articleName}} - Score: {{review.score}}</h5>
+
+    <div mat-line class="section">
+      <div class="label">Score: </div>
+      <div [ngClass]="{bad: (review.reviewScore < 40), 
+                      good: (review.reviewScore > 59), 
+                      mediocre: (review.reviewScore > 39 && review.reviewScore < 60)}">{{review.reviewScore}}
+                      </div>
+      </div>
+
+
+    <div mat-line class="section">
+        <div class="label">Review by {{review.contributorName}}</div>
+        <div></div>
     </div>
 
       <div mat-line>
         <div [innerHTML] = review.text class="reviewText"> 
         </div>
+
       </div>
    
   </mat-list-item>

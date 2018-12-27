@@ -5,6 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { ArticleService }  from 'app/services/article.service';
+import { ReviewService } from 'app/services/review.service';
+import { forEach } from '@angular/router/src/utils/collection';
+import { Review } from 'app/domain/review';
+import { Observable } from 'rxjs';
+import { keyframes } from '@angular/animations';
  
 @Component({
   selector: 'app-article-detail',
@@ -13,10 +18,16 @@ import { ArticleService }  from 'app/services/article.service';
 })
 export class ArticleDetailComponent implements OnInit {
   @Input() article: Article;
- 
+  illumineScore: number;
+  numberOfScores: number;
+  scores: number[];
+  reviews: Observable<Review[]>;
+  index: number = 0;
+
   constructor(
     private route: ActivatedRoute,
     private articleService: ArticleService,
+    private reviewService: ReviewService,
     private location: Location
   ) {}
  
@@ -30,7 +41,7 @@ export class ArticleDetailComponent implements OnInit {
       .subscribe(article => this.article = article);
   }
 
-  goBack(): void {
+    goBack(): void {
     this.location.back();
   }
 

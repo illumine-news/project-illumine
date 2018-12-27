@@ -6,6 +6,7 @@ import { MessageService } from 'app/services/message.service';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -39,6 +40,18 @@ private articlesUrl = 'api/articles';
     catchError(this.handleError('getArticles', []))
    );
   }
+
+  // getIllumineScore(articleId: number): Observable<number> {
+  //   //TODO: query reviews associated with this article ID
+  //   //and get an aggregate of the scores
+  //   //return this.http.get
+
+  //   Array.prototype.forEach()
+  // }
+
+  // getAssociatedReviews(articleId: number): Review[] {
+  //   reviews.foreach
+  // }
 
   addArticle (article: Article): Observable<Article> {
     return this.http.post<Article>(this.articlesUrl, article, httpOptions).pipe(
