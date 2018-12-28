@@ -5,15 +5,11 @@
     <div><span>id: </span>{{editorial.id}}</div>
     <div>
       <label>Editable Name:
-        <input [(ngModel)]="editorial.editorialName" placeholder="name"/>
+        <span>{{editorial.name}}</span>
       </label>
     </div>
-    <div><span>rating: </span>TBD</div>
   
-  <button (click)="save()">save</button>
 </div>  
-
-<button (click)="goBack()">go back</button>
 
 <div *ngIf="editorial"> 
   <h3>{{editorial.editorialName | uppercase}}</h3>

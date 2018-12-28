@@ -13,9 +13,12 @@ export class AppComponent {
 
   constructor(private responsiveService: ResponsiveService) {}
 
-  getPathForLogo(): string {
-    this.isMobile = this.responsiveService.mobileCheckRegEx();
-    
+ngOnInit() {
+  this.isMobile = this.responsiveService.mobileCheckRegEx();
+  console.log("Mobile status: " + this.isMobile)
+}
+
+  getPathForLogo(): string {    
     let path;
 
     if (this.isMobile) {
@@ -27,5 +30,10 @@ export class AppComponent {
     }
 
     return path;
+  }
+
+  remove(): void {
+    let disclaimer = document.getElementById("disclaimerMsg");
+    disclaimer.remove();
   }
 }

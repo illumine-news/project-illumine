@@ -27,6 +27,8 @@ h1 {
     width: 100%;
     border-style: solid;
     border-color: white white black white;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   nav a {
@@ -47,3 +49,70 @@ h1 {
     font-weight: 500;
     background-color: black;
   }
+
+  .disclaimer {
+    float: right;
+    width: 100%;
+    flex-wrap: nowrap;
+    position: relative;
+    border: 2px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px;
+  }
+  
+  .disclaimerContainer {
+    float: right;
+    width: 40%;
+    flex-wrap: nowrap;
+    position: relative;
+    padding: 10px
+  }
+  
+  .disclaimerContainerMobile {
+    width: 80%;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    align-content: center;
+  }
+
+  button {
+    background-color: lightgray;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  button:hover {
+    background-color: blue;
+  }
+/* 
+  .flex-container {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-flow: initial;
+  }
+  
+  .flex-container-vertical {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-flow: initial;
+    flex-direction: column;
+    flex-basis: auto;
+    align-content: flex-start;
+  }
+  
+  .flex-item {
+    width: 90%;
+    padding: 20px;
+    flex-shrink: 10;
+  } */

@@ -1,12 +1,12 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
 
-  <ng-container matColumnDef="organizationName"> 
+  <ng-container matColumnDef="organizationName" class="header"> 
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization Name</th>
     <td mat-cell *matCellDef="let organization" routerLink="/organizations/{{organization.id}}" class="organizationLink">{{organization.name}}</td>
   </ng-container>
 
   <ng-container matColumnDef="organizationScore">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization Score</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="scoreHeader">Organization Score</th>
     <td mat-cell *matCellDef="let organization" 
         [ngClass]="{bad: (organization.organizationScore < 40), 
                     good: (organization.organizationScore > 59), 

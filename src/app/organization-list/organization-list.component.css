@@ -1,6 +1,7 @@
 /* organizationsComponent's private CSS styles */
 table {
   margin: 0 0 2em 0;
+  width: 100px;
 }
 
 td {
@@ -66,6 +67,7 @@ button.delete {
 
 .organizationLink {
   cursor: pointer;
+  text-align: left;
 }
 
 .paginator {

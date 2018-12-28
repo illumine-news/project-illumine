@@ -1,17 +1,17 @@
 <div *ngIf="organization">
 
     <h2>{{organization.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{organization.id}}</div>
+    <div><span>ID: </span>{{organization.id}}</div>
     <div>
-      <label>name:
-        <input [(ngModel)]="organization.name" placeholder="name"/>
+      <label>Name:
+        <span>{{organization.name}}</span>
       </label>
     </div>
-    <div><span>rating: </span>TBD</div>
+    <div><label>Rating:
+        <span>{{organization.organizationScore}}</span>
+      </label>
+    </div>
   </div>
-
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
 
   <!----<div class="flex-item" id="articlesContainer">
     <app-article-list [organizationId]=organizationId></app-article-list>
