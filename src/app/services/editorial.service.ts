@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Editorial } from 'app/domain/editorial';
 
 import { Observable, of } from 'rxjs';
-import { MessageService } from 'app/services/message.service';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -18,8 +17,7 @@ const httpOptions = {
 export class EditorialService {
 
   constructor(
-    private http: HttpClient,
-    private messageService: MessageService
+    private http: HttpClient,    
     ) { }
 
 private editorialsUrl = 'api/editorials';
@@ -27,7 +25,7 @@ private editorialsUrl = 'api/editorials';
   geteditorial(id: number): Observable<Editorial> {
     const url = `${this.editorialsUrl}/${id}`;
     return this.http.get<Editorial>(url).pipe(
-      tap(_ => this.log(`fetched editorial id=${id}`)),
+      tap(_ => console.log(`fetched editorial id=${id}`)),
       catchError(this.handleError<Editorial>(`geteditorial id=${id}`))
     );
   }
@@ -35,21 +33,21 @@ private editorialsUrl = 'api/editorials';
   geteditorials(): Observable<Editorial[]> {
    return this.http.get<Editorial[]>(this.editorialsUrl)
    .pipe(
-    tap(editorials => this.log('fetched editorials')), 
+    tap(editorials => console.log('fetched editorials')), 
     catchError(this.handleError('geteditorials', []))
    );
   }
 
   addeditorial (editorial: Editorial): Observable<Editorial> {
     return this.http.post<Editorial>(this.editorialsUrl, editorial, httpOptions).pipe(
-      tap((editorial: Editorial) => this.log(`added editorial w/ id=${editorial.id}`)),
+      tap((editorial: Editorial) => console.log(`added editorial w/ id=${editorial.id}`)),
       catchError(this.handleError<Editorial>('addeditorial'))
     );
   }
 
   updateeditorial (editorial: Editorial): Observable<any> {
     return this.http.put(this.editorialsUrl, editorial, httpOptions).pipe(
-      tap(_ => this.log(`updated editorial id=${editorial.id}`)),
+      tap(_ => console.log(`updated editorial id=${editorial.id}`)),
       catchError(this.handleError<any>('updateeditorial'))
     );
   }
@@ -59,7 +57,7 @@ private editorialsUrl = 'api/editorials';
     const url = `${this.editorialsUrl}/${id}`;
 
     return this.http.delete<Editorial>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted editorial id=${id}`)),
+      tap(_ => console.log(`deleted editorial id=${id}`)),
       catchError(this.handleError<Editorial>('deleteeditorial'))
     );
   }
@@ -71,14 +69,10 @@ searcheditorials(term: string): Observable<Editorial[]> {
     return of([]);
   }
   return this.http.get<Editorial[]>(`${this.editorialsUrl}/?name=${term}`).pipe(
-    tap(_ => this.log(`found editorials matching "${term}"`)),
+    tap(_ => console.log(`found editorials matching "${term}"`)),
     catchError(this.handleError<Editorial[]>('searcheditorials', []))
   );
 }
-
-  private log(messageg: string) {
-    this.messageService.add('editorialService: ${message}');
-  }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -87,7 +81,7 @@ searcheditorials(term: string): Observable<Editorial[]> {
       console.error(error); // log to console instead
    
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      console.log(`${operation} failed: ${error.message}`);
    
       // Let the app keep running by returning an empty result.
       return of(result as T);

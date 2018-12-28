@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Review } from 'app/domain/review';
 
 import { Observable, of } from 'rxjs';
-import { MessageService } from 'app/services/message.service';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -19,7 +18,6 @@ export class ReviewService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService
     ) { }
 
 private reviewsUrl = 'api/reviews/';
@@ -31,7 +29,7 @@ getreviewsforarticle(articleId: any): Observable<Review[]> {
     return of ([]);
   }
   return this.http.get<Review[]>(`${this.reviewsUrl}/?articleId=${articleId}`).pipe(
-  tap(_ => this.log(`found reviews matching "${articleId}"`)),
+  tap(_ => console.log(`found reviews matching "${articleId}"`)),
   catchError(this.handleError<Review[]>('getReviewsForArticle', []))
   );
 }  
@@ -39,21 +37,21 @@ getreviewsforarticle(articleId: any): Observable<Review[]> {
 getreviews(): Observable<Review[]> {
    return this.http.get<Review[]>(this.reviewsUrl)
    .pipe(
-    tap(reviews => this.log('fetched reviews')), 
+    tap(reviews => console.log('fetched reviews')), 
     catchError(this.handleError('getreviews', []))
    );
   }
 
   addreview (review: Review): Observable<Review> {
     return this.http.post<Review>(this.reviewsUrl, review, httpOptions).pipe(
-      tap((review: Review) => this.log(`added review w/ id=${review.id}`)),
+      tap((review: Review) => console.log(`added review w/ id=${review.id}`)),
       catchError(this.handleError<Review>('addreview'))
     );
   }
 
   updatereview (review: Review): Observable<any> {
     return this.http.put(this.reviewsUrl, review, httpOptions).pipe(
-      tap(_ => this.log(`updated review id=${review.id}`)),
+      tap(_ => console.log(`updated review id=${review.id}`)),
       catchError(this.handleError<any>('updatereview'))
     );
   }
@@ -63,7 +61,7 @@ getreviews(): Observable<Review[]> {
     const url = `${this.reviewsUrl}/${id}`;
 
     return this.http.delete<Review>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted review id=${id}`)),
+      tap(_ => console.log(`deleted review id=${id}`)),
       catchError(this.handleError<Review>('deletereview'))
     );
   }
@@ -75,14 +73,10 @@ searchreviews(term: string): Observable<Review[]> {
     return of([]);
   }
   return this.http.get<Review[]>(`${this.reviewsUrl}/?name=${term}`).pipe(
-    tap(_ => this.log(`found reviews matching "${term}"`)),
+    tap(_ => console.log(`found reviews matching "${term}"`)),
     catchError(this.handleError<Review[]>('searchreviews', []))
   );
 }
-
-  private log(messageg: string) {
-    this.messageService.add('reviewService: ${message}');
-  }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -91,7 +85,7 @@ searchreviews(term: string): Observable<Review[]> {
       console.error(error); // log to console instead
    
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      console.log(`${operation} failed: ${error.message}`);
    
       // Let the app keep running by returning an empty result.
       return of(result as T);

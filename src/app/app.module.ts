@@ -16,17 +16,14 @@ import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from 'app/app.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
-import { OrganizationSearchComponent } from 'app/organization-search/organization-search.component';
-import { ArticleSearchComponent } from 'app/articles/article-search/article-search.component';
 import { ArticleListComponent } from 'app/articles/article-list/article-list.component';
 import { ArticleDetailComponent } from 'app/articles/article-detail/article-detail.component';
-import { OrganizationListComponent } from 'app/organization-list/organization-list.component';
-import { OrganizationDetailComponent } from 'app/organization-detail/organization-detail.component';
-import { EditorialDetailComponent } from 'app/editorial-detail/editorial-detail.component';
-import { EditorialListComponent } from 'app/editorial-list/editorial-list.component';
+import { OrganizationListComponent } from 'app/organizations/organization-list/organization-list.component';
+import { OrganizationDetailComponent } from 'app/organizations/organization-detail/organization-detail.component';
+import { EditorialDetailComponent } from 'app/editorials/editorial-detail/editorial-detail.component';
+import { EditorialListComponent } from 'app/editorials/editorial-list/editorial-list.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 
-import { MessagesComponent } from 'app/messages/messages.component';
 import { InMemoryDataService } from 'app/services/in-memory-data-service';
 import { ArticleListSummaryComponent } from 'app/articles/article-list-summary/article-list-summary.component';
 
@@ -38,10 +35,7 @@ import { ArticleListSummaryComponent } from 'app/articles/article-list-summary/a
     ArticleDetailComponent,
     OrganizationListComponent,
     OrganizationDetailComponent,
-    MessagesComponent,
     DashboardComponent,
-    OrganizationSearchComponent,
-    ArticleSearchComponent,
     EditorialDetailComponent,
     EditorialListComponent,
     ReviewListComponent,

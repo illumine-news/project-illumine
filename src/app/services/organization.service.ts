@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Organization } from 'app/domain/organization';
 
 import { Observable, of } from 'rxjs';
-import { MessageService } from 'app/services/message.service';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -20,7 +19,6 @@ export class OrganizationService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService
     ) { }
 
 private organizationsUrl = 'api/organizations';
@@ -34,21 +32,21 @@ private organizationsUrl = 'api/organizations';
   getOrganizations(): Observable<Organization[]> {
    return this.http.get<Organization[]>(this.organizationsUrl)
    .pipe(
-    tap(organizations => this.log('fetched organizations')), 
+    tap(organizations => console.log('fetched organizations')), 
     catchError(this.handleError('getOrganizations', []))
    );
   }
 
   addOrganization (organization: Organization): Observable<Organization> {
     return this.http.post<Organization>(this.organizationsUrl, organization, httpOptions).pipe(
-      tap((organization: Organization) => this.log(`added organization w/ id=${organization.id}`)),
+      tap((organization: Organization) => console.log(`added organization w/ id=${organization.id}`)),
       catchError(this.handleError<Organization>('addOrganization'))
     );
   }
 
   updateOrganization (organization: Organization): Observable<any> {
     return this.http.put(this.organizationsUrl, organization, httpOptions).pipe(
-      tap(_ => this.log(`updated organization id=${organization.id}`)),
+      tap(_ => console.log(`updated organization id=${organization.id}`)),
       catchError(this.handleError<any>('updateOrganization'))
     );
   }
@@ -58,7 +56,7 @@ private organizationsUrl = 'api/organizations';
     const url = `${this.organizationsUrl}/${id}`;
 
     return this.http.delete<Organization>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted organization id=${id}`)),
+      tap(_ => console.log(`deleted organization id=${id}`)),
       catchError(this.handleError<Organization>('deleteOrganization'))
     );
   }
@@ -70,14 +68,10 @@ searchOrganizations(term: string): Observable<Organization[]> {
     return of([]);
   }
   return this.http.get<Organization[]>(`${this.organizationsUrl}/?name=${term}`).pipe(
-    tap(_ => this.log(`found organizations matching "${term}"`)),
+    tap(_ => console.log(`found organizations matching "${term}"`)),
     catchError(this.handleError<Organization[]>('searchOrganizations', []))
   );
 }
-
-  private log(messageg: string) {
-    this.messageService.add('OrganizationService: ${message}');
-  }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -86,7 +80,7 @@ searchOrganizations(term: string): Observable<Organization[]> {
       console.error(error); // log to console instead
    
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      console.log(`${operation} failed: ${error.message}`);
    
       // Let the app keep running by returning an empty result.
       return of(result as T);

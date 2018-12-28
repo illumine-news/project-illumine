@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { Article } from 'app/domain/article';
 
 import { Observable, of } from 'rxjs';
-import { MessageService } from 'app/services/message.service';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -20,7 +18,6 @@ export class ArticleService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService
     ) { }
 
 private articlesUrl = 'api/articles';
@@ -29,7 +26,7 @@ private articlesUrlAlt = 'api/articles/';
   getArticle(id: number): Observable<Article> {
     const url = `${this.articlesUrl}/${id}`;
     return this.http.get<Article>(url).pipe(
-      tap(_ => this.log(`fetched article id=${id}`)),
+      tap(_ => console.log(`fetched article id=${id}`)),
       catchError(this.handleError<Article>(`getArticle id=${id}`))
     );
   }
@@ -37,7 +34,7 @@ private articlesUrlAlt = 'api/articles/';
   getArticles(): Observable<Article[]> {
    return this.http.get<Article[]>(this.articlesUrl)
    .pipe(
-    tap(articles => this.log('fetched articles')), 
+    tap(articles => console.log('fetched articles')), 
     catchError(this.handleError('getArticles', []))
    );
   }
@@ -48,36 +45,12 @@ private articlesUrlAlt = 'api/articles/';
     console.log("Organization ID not found");
     return of ([]);
   }
-  console.log("SERVICE - Org ID: " + organizationId);
+  
   return this.http.get<Article[]>(`api/reviews/?articleId=9`).pipe(
-  //tap(_ => console.log(`found organizations matching "${organizationId}"`)),
-  //catchError(this.handleError<Article[]>('getArticlesForOrganization', []))
+  tap(_ => console.log(`found organizations matching "${organizationId}"`)),
+  catchError(this.handleError<Article[]>('getArticlesForOrganization', []))
   );
   }
-
-  // addArticle (article: Article): Observable<Article> {
-  //   return this.http.post<Article>(this.articlesUrl, article, httpOptions).pipe(
-  //     tap((article: Article) => this.log(`added article w/ id=${article.id}`)),
-  //     catchError(this.handleError<Article>('addArticle'))
-  //   );
-  // }
-
-  // updateArticle (article: Article): Observable<any> {
-  //   return this.http.put(this.articlesUrl, article, httpOptions).pipe(
-  //     tap(_ => this.log(`updated article id=${article.id}`)),
-  //     catchError(this.handleError<any>('updateArticle'))
-  //   );
-  // }
-
-  // deleteArticle (article: Article | number): Observable<Article> {
-  //   const id = typeof article === 'number' ? article : article.id;
-  //   const url = `${this.articlesUrl}/${id}`;
-
-  //   return this.http.delete<Article>(url, httpOptions).pipe(
-  //     tap(_ => this.log(`deleted article id=${id}`)),
-  //     catchError(this.handleError<Article>('deleteArticle'))
-  //   );
-  // }
 
   /* GET articles whose name contains search term */
   searchArticles(term: string): Observable<Article[]> {
@@ -86,14 +59,10 @@ private articlesUrlAlt = 'api/articles/';
     return of([]);
   }
   return this.http.get<Article[]>(`${this.articlesUrl}/?articleName=${term}`).pipe(
-    tap(_ => this.log(`found articles matching "${term}"`)),
+    tap(_ => console.log(`found articles matching "${term}"`)),
     catchError(this.handleError<Article[]>('searchArticles', []))
   );
 }
-
-  private log(messageg: string) {
-    this.messageService.add('ArticleService: ${message}');
-  }
 
   private handleError<T> (operation = 'operation', result?: T) {
 

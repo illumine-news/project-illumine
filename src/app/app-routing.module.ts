@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { ArticleListComponent } from 'app/articles/article-list/article-list.component';
 import { ArticleDetailComponent } from 'app/articles/article-detail/article-detail.component';
-import { OrganizationListComponent } from 'app/organization-list/organization-list.component';
-import { OrganizationDetailComponent } from 'app/organization-detail/organization-detail.component';
-import { EditorialListComponent } from 'app/editorial-list/editorial-list.component';
-import { EditorialDetailComponent } from './editorial-detail/editorial-detail.component';
-import { ReviewListComponent } from './review-list/review-list.component';
+import { OrganizationListComponent } from 'app/organizations/organization-list/organization-list.component';
+import { OrganizationDetailComponent } from 'app/organizations/organization-detail/organization-detail.component';
+import { EditorialListComponent } from 'app/editorials/editorial-list/editorial-list.component';
+import { EditorialDetailComponent } from 'app/editorials/editorial-detail/editorial-detail.component';
+import { ReviewListComponent } from 'app/review-list/review-list.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard'},
