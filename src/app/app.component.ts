@@ -9,7 +9,7 @@ import { ResponsiveService } from './services/responsive.service';
 })
 export class AppComponent {
   title: string = '';
-  isMobile: Boolean;
+  public isMobile: Boolean;
 
   constructor(private responsiveService: ResponsiveService) {}
 

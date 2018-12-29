@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   
   articles: Article[] = [];
   organizations: Organization[] = [];
-  private isMobile: Boolean;
+  public isMobile: Boolean;
 
   constructor(
     private responsiveService: ResponsiveService,
