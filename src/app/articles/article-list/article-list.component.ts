@@ -120,18 +120,5 @@ export class ArticleListComponent implements OnInit {
   compare(a, b, isAsc) {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
-  // add(name: string): void {
-  //   name = name.trim();
-  //   if (!name) { return; }
-  //   this.articleService.addArticle({ name } as Article)
-  //   .subscribe(article => {
-  //     this.articles.push(article);
-  //   });
-  // }
-
-  // delete(article: Article): void {
-  //   this.articles = this.articles.filter(h => h !== article);
-  //   this.articleService.deleteArticle(article).subscribe();
-  // }
 }
 
