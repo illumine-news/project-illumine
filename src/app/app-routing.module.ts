@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'organizations/:id', component: OrganizationDetailComponent},
   { path: 'reviews', component: ReviewListComponent},
   { path: 'reviews/:id', component: ReviewListComponent},
-  { path: '**', pathMatch: 'full', redirectTo: 'dashboard'},
+  { path: '**', pathMatch: 'full', redirectTo: '404.html'},
   //{ path: 'reviews/:reviewId', component: ReviewDetailComponent} //TODO
 ];
 

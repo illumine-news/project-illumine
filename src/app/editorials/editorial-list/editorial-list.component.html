@@ -2,12 +2,12 @@
 
 <mat-nav-list> 
     <mat-list-item *ngFor="let editorial of editorials | slice:0:4;">
-      <a matLine href="/editorials/{{editorial.id}}">
+      <a matLine routerLink="/editorials/{{editorial.id}}">
         <div class="editorialName">{{editorial.editorialName}}
         </div>
       </a>
       <!--TODO: make author name clickable-->
-      <a matLine href="">{{editorial.authorName}}</a>
+      <a matLine routerLink="">{{editorial.authorName}}</a>
     </mat-list-item>
 </mat-nav-list>
     </form>
