@@ -41,7 +41,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     const editorials = [
       { id: 21, editorialName: 'Journalism in numbers', authorName: "Nate Silver", organizationName: "FiveThirtyEight", text: this.editorialText, datePublished: new Date('December 17, 1995 03:24:00'), illumineScore: 99 },
-      { id: 22, editorialName: 'How to spot fake news', authorName: "Kate Mara", organizationName: "New York Times", datePublished: new Date('October 15, 2004 01:19:05'), illumineScore: 92 },
+      { id: 22, editorialName: 'How to spot fake news', authorName: "Zoe Barnes", organizationName: "New York Times", datePublished: new Date('October 15, 2004 01:19:05'), illumineScore: 92 },
       { id: 23, editorialName: 'Signs an article was rushed', authorName: "Mary Shelley", organizationName: "Fox News", datePublished: new Date('June 27, 2016 21:14:35'), illumineScore: 73 },
       { id: 24, editorialName: 'Dealing with trolls', authorName: "Jeanne d'Arc", organizationName: "CNN", datePublished: 'April 14, 1984 21:14:35', illumineScore: 84 },
       { id: 25, editorialName: 'Help - my father reads InfoWars', authorName: "Alan Turing", organizationName: "BBC", datePublished: 'March 16, 1920 21:14:35', illumineScore: 12 },
