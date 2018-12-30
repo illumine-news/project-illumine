@@ -16,16 +16,16 @@ export class InMemoryDataService implements InMemoryDbService {
 
   createDb() {
     const articles = [
-      { id: 1, articleName: 'On Geralt and Toe Stubbing', authorName: "Andrzej Sapkowski", organizationId: "20", organizationName: "FiveThirtyEight", articleSummary: this.articleSummaryText,  datePublished: new Date('December 17, 1995 03:24:00'), illumineScore: 99 },
-      { id: 2, articleName: 'Wines of Toussant', authorName: "Andrzej Sapkowski", organizationId: "12", organizationName: "New York Times", articleSummary: this.articleSummaryText,  datePublished: new Date('October 15, 2004 01:19:05'), illumineScore: 92 },
-      { id: 3, articleName: 'Mechanical Man', authorName: "Chris Roberts", organizationId: "17", organizationName: "Fox News", articleSummary: this.articleSummaryText, datePublished: new Date('June 27, 2016 21:14:35'), illumineScore: 73 },
-      { id: 4, articleName: 'Moonlighters', authorName: "Eric Roberts", organizationId: "14", organizationName: "CNN", articleSummary: this.articleSummaryText,  datePublished: 'April 14, 1984 21:14:35', illumineScore: 84 },
-      { id: 5, articleName: 'How to build poison tolerance', organizationId: "15", organizationName: "BBC", articleSummary: this.articleSummaryText,  authorName: "John Roberts", datePublished: 'March 16, 1920 21:14:35', illumineScore: 12 },
-      { id: 6, articleName: 'Guide to Griefing', authorName: "Otzdarva", organizationId: "19", organizationName: "The Atlantic", articleSummary: this.articleSummaryText,  datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
-      { id: 7, articleName: 'Presidents and Pancakes', authorName: "George Stephanopolous", organizationId: "16", organizationName: "MSNBC", articleSummary: this.articleSummaryText,  datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
-      { id: 8, articleName: 'Righteous Fury', authorName: "Brad Pitt", organizationId: "14", organizationName: "CNN", articleSummary: this.articleSummaryText,  datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
+      { id: 1, articleName: 'Rebooting the Economy', authorName: "Elliot Alderson", organizationId: "20", organizationName: "FiveThirtyEight", articleSummary: this.articleSummaryText,  datePublished: new Date('December 17, 1995 03:24:00'), illumineScore: 99 },
+      { id: 2, articleName: 'Wines of Toussaint', authorName: "Anna Henrietta", organizationId: "12", organizationName: "New York Times", articleSummary: this.articleSummaryText,  datePublished: new Date('October 15, 2004 01:19:05'), illumineScore: 92 },
+      { id: 3, articleName: 'Mechanical Man', authorName: "Nikola Tesla", organizationId: "17", organizationName: "Fox News", articleSummary: this.articleSummaryText, datePublished: new Date('June 27, 2016 21:14:35'), illumineScore: 73 },
+      { id: 4, articleName: 'Moonlighters', authorName: "Stephen Hawking", organizationId: "14", organizationName: "CNN", articleSummary: this.articleSummaryText,  datePublished: 'April 14, 1984 21:14:35', illumineScore: 84 },
+      { id: 5, articleName: 'How to build poison tolerance', authorName: "Westley", organizationId: "15", organizationName: "BBC", articleSummary: this.articleSummaryText, datePublished: 'March 16, 1920 21:14:35', illumineScore: 12 },
+      { id: 6, articleName: 'Guide to Griefing', authorName: "Vizzini", organizationId: "19", organizationName: "The Atlantic", articleSummary: this.articleSummaryText,  datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
+      { id: 7, articleName: 'Executive Privilege', authorName: "Chester A. Arthur", organizationId: "16", organizationName: "MSNBC", articleSummary: this.articleSummaryText,  datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
+      { id: 8, articleName: 'Righteous Fury', authorName: "Abraham Lincoln", organizationId: "14", organizationName: "CNN", articleSummary: this.articleSummaryText,  datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
       { id: 9, articleName: 'What went wrong in 2016', authorName: "Nate Silver", organizationId: "20", organizationName: "FiveThirtyEight", articleSummary: this.articleSummaryText,  datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
-      { id: 10, articleName: 'Neon Demons', authorName: "Elle Fanning", organizationId: "11", organizationName: "Reuters", articleSummary: this.articleSummaryText,  datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
+      { id: 10, articleName: 'Neon Demons', authorName: "Jane Austen", organizationId: "11", organizationName: "Reuters", articleSummary: this.articleSummaryText,  datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
     const organizations = [
       { id: 11, name: 'Reuters', organizationScore: 70 },
@@ -41,28 +41,28 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     const editorials = [
       { id: 21, editorialName: 'Journalism in numbers', authorName: "Nate Silver", organizationName: "FiveThirtyEight", text: this.editorialText, datePublished: new Date('December 17, 1995 03:24:00'), illumineScore: 99 },
-      { id: 22, editorialName: 'How to spot fake news', authorName: "Maarten Shenck", organizationName: "New York Times", datePublished: new Date('October 15, 2004 01:19:05'), illumineScore: 92 },
-      { id: 23, editorialName: 'Signs an article was rushed', authorName: "Juiliette Lewis", organizationName: "Fox News", datePublished: new Date('June 27, 2016 21:14:35'), illumineScore: 73 },
-      { id: 24, editorialName: 'Dealing with trolls', authorName: "Elizabeth Warren", organizationName: "CNN", datePublished: 'April 14, 1984 21:14:35', illumineScore: 84 },
-      { id: 25, editorialName: 'Help - my father reads InfoWars', organizationName: "BBC", authorName: "John Roberts", datePublished: 'March 16, 1920 21:14:35', illumineScore: 12 },
-      { id: 26, editorialName: 'Effects of money on news', authorName: "Ann Coulter", organizationName: "The Atlantic", datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
-      { id: 27, editorialName: 'Access over truth', authorName: "George Stephanopolous", organizationName: "MSNBC", datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
-      { id: 28, editorialName: 'Echo chamber', authorName: "Brad Pitt", organizationName: "CNN", datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
+      { id: 22, editorialName: 'How to spot fake news', authorName: "Kate Mara", organizationName: "New York Times", datePublished: new Date('October 15, 2004 01:19:05'), illumineScore: 92 },
+      { id: 23, editorialName: 'Signs an article was rushed', authorName: "Mary Shelley", organizationName: "Fox News", datePublished: new Date('June 27, 2016 21:14:35'), illumineScore: 73 },
+      { id: 24, editorialName: 'Dealing with trolls', authorName: "Jeanne d'Arc", organizationName: "CNN", datePublished: 'April 14, 1984 21:14:35', illumineScore: 84 },
+      { id: 25, editorialName: 'Help - my father reads InfoWars', authorName: "Alan Turing", organizationName: "BBC", datePublished: 'March 16, 1920 21:14:35', illumineScore: 12 },
+      { id: 26, editorialName: 'Effects of money on news', authorName: "Charles de Gaulle", organizationName: "The Atlantic", datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
+      { id: 27, editorialName: 'Access over truth', authorName: "Yekaterina Alekseyevna", organizationName: "MSNBC", datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
+      { id: 28, editorialName: 'Echo chamber', authorName: "Jules Verne", organizationName: "CNN", datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
       { id: 29, editorialName: 'Beyond the news cycle', authorName: "Nate Silver", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
-      { id: 30, editorialName: 'Peer review in journalism', authorName: "Jason Statham", organizationName: "Reuters", datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
+      { id: 30, editorialName: 'Peer review in journalism', authorName: "Isaac Newton", organizationName: "Reuters", datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
     const reviews = [
-      { id: 31, articleId: 1, articleName: 'On Geralt and Toe Stubbing', contributorId: 41, contributorName: 'James Joyce', reviewScore: 75, text: this.reviewTextGood },
-      { id: 32, articleId: 2, articleName: 'Wines of Toussant', contributorId: 42, contributorName: 'Susan Collins', reviewScore: 92, text: this.reviewTextGood },
-      { id: 33, articleId: 3, articleName: 'Mechanical Man', contributorId: 43, contributorName: 'Clare Malone', reviewScore: 38, text: this.reviewTextBad },
-      { id: 34, articleId: 4, articleName: 'Moonlighters', contributorId: 44, contributorName: 'Perry Bacon, Jr.', reviewScore: 14, text: this.reviewTextBad },
-      { id: 35, articleId: 5, articleName: 'How to build poison tolerance', contributorId: 45, contributorName: 'Sarah Frostenson', reviewScore: 45, text: this.reviewTextBad },
-      { id: 36, articleId: 6, articleName: 'Guide to Griefing', contributorId: 46, contributorName: 'Heather Alexandra', reviewScore: 86, text: this.reviewTextGood },
-      { id: 37, articleId: 7, articleName: 'Presidents and Pancakes', contributorId: 47, contributorName: 'Laura Wagner', reviewScore: 56, text: this.reviewTextBad },
-      { id: 38, articleId: 8, articleName: 'Righteous Fury', contributorId: 48, contributorName: 'Michael K', reviewScore: 73, text: this.reviewTextGood },
-      { id: 39, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, contributorName: 'Tom Ley', reviewScore: 79, text: this.reviewTextGood },
-      { id: 40, articleId: 10, articleName: 'Neon Demons', contributorId: 50, contributorName: 'Hannah Gold', reviewScore: 89, text: this.reviewTextGood },
-      { id: 41, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, contributorName: 'Rachel Weisz', reviewScore: 43, text: this.reviewTextBad }
+      { id: 31, articleId: 1, articleName: 'Rebooting the Economy', contributorId: 41, contributorName: 'Lee Adama', reviewScore: 75, text: this.reviewTextGood },
+      { id: 32, articleId: 2, articleName: 'Wines of Toussaint', contributorId: 42, contributorName: 'Tyrion Lannister', reviewScore: 92, text: this.reviewTextGood },
+      { id: 33, articleId: 3, articleName: 'Mechanical Man', contributorId: 43, contributorName: 'Ellen Ripley', reviewScore: 38, text: this.reviewTextBad },
+      { id: 34, articleId: 4, articleName: 'Moonlighters', contributorId: 44, contributorName: 'Richard Kiel', reviewScore: 14, text: this.reviewTextBad },
+      { id: 35, articleId: 5, articleName: 'How to build poison tolerance', contributorId: 45, contributorName: 'Vizzini', reviewScore: 45, text: this.reviewTextBad },
+      { id: 36, articleId: 6, articleName: 'Guide to Griefing', contributorId: 46, contributorName: 'Lisbeth Salander', reviewScore: 86, text: this.reviewTextGood },
+      { id: 37, articleId: 7, articleName: 'Executive Privilege', contributorId: 47, contributorName: 'Walter Cronkite', reviewScore: 56, text: this.reviewTextBad },
+      { id: 38, articleId: 8, articleName: 'Righteous Fury', contributorId: 48, contributorName: 'Don Collier', reviewScore: 73, text: this.reviewTextGood },
+      { id: 39, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, contributorName: 'Clare Underwood', reviewScore: 79, text: this.reviewTextGood },
+      { id: 40, articleId: 10, articleName: 'Neon Demons', contributorId: 50, contributorName: 'Elena', reviewScore: 89, text: this.reviewTextGood },
+      { id: 41, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, contributorName: 'Edward Meechum', reviewScore: 43, text: this.reviewTextBad }
     ]
 
     return { articles, organizations, editorials, reviews };

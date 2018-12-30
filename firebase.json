@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist",
+    "public": "dist/project-illumine",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,7 +12,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "./src/app/dashboard/dashboard.component.html"
+        "destination": ""
       }
     ]
   }
