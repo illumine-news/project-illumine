@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBSAqwwmANz0DtEseTw3HSPykNOnW0m3jw",
-    projectId: "test-54025"
+    apiKey: "AIzaSyD1-zk3zSYVmqgmD3m14Jx1k5JrwV42mwE",
+    projectId: "illumine-test"
   }
 };
 
