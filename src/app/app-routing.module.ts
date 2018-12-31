@@ -10,7 +10,7 @@ import { EditorialDetailComponent } from 'app/editorials/editorial-detail/editor
 import { ReviewListComponent } from 'app/review-list/review-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'dashboard'},
+  { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'articles', component: ArticleListComponent },
   { path: 'articles/:id', component: ArticleDetailComponent},
