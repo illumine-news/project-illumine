@@ -25,7 +25,6 @@ private editorialsUrl = 'api/editorials';
   geteditorial(id: number): Observable<Editorial> {
     const url = `${this.editorialsUrl}/${id}`;
     return this.http.get<Editorial>(url).pipe(
-      tap(_ => console.log(`fetched editorial id=${id}`)),
       catchError(this.handleError<Editorial>(`geteditorial id=${id}`))
     );
   }
@@ -33,21 +32,18 @@ private editorialsUrl = 'api/editorials';
   geteditorials(): Observable<Editorial[]> {
    return this.http.get<Editorial[]>(this.editorialsUrl)
    .pipe(
-    tap(editorials => console.log('fetched editorials')), 
     catchError(this.handleError('geteditorials', []))
    );
   }
 
   addeditorial (editorial: Editorial): Observable<Editorial> {
     return this.http.post<Editorial>(this.editorialsUrl, editorial, httpOptions).pipe(
-      tap((editorial: Editorial) => console.log(`added editorial w/ id=${editorial.id}`)),
       catchError(this.handleError<Editorial>('addeditorial'))
     );
   }
 
   updateeditorial (editorial: Editorial): Observable<any> {
     return this.http.put(this.editorialsUrl, editorial, httpOptions).pipe(
-      tap(_ => console.log(`updated editorial id=${editorial.id}`)),
       catchError(this.handleError<any>('updateeditorial'))
     );
   }
@@ -57,7 +53,6 @@ private editorialsUrl = 'api/editorials';
     const url = `${this.editorialsUrl}/${id}`;
 
     return this.http.delete<Editorial>(url, httpOptions).pipe(
-      tap(_ => console.log(`deleted editorial id=${id}`)),
       catchError(this.handleError<Editorial>('deleteeditorial'))
     );
   }
@@ -69,7 +64,6 @@ searcheditorials(term: string): Observable<Editorial[]> {
     return of([]);
   }
   return this.http.get<Editorial[]>(`${this.editorialsUrl}/?name=${term}`).pipe(
-    tap(_ => console.log(`found editorials matching "${term}"`)),
     catchError(this.handleError<Editorial[]>('searcheditorials', []))
   );
 }

@@ -15,7 +15,6 @@ export class AppComponent {
 
 ngOnInit() {
   this.isMobile = this.responsiveService.mobileCheckRegEx();
-  console.log("Mobile status: " + this.isMobile)
 }
 
   getPathForLogo(): string {    

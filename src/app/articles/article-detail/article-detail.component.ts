@@ -27,8 +27,6 @@ export class ArticleDetailComponent implements OnInit {
  
   ngOnInit(): void {
     this.getarticle();
-    
-   console.log("Article self: " + this.article);
   }
   
   getarticle(): void {

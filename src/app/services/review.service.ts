@@ -29,7 +29,6 @@ getreviewsforarticle(articleId: any): Observable<Review[]> {
     return of ([]);
   }
   return this.http.get<Review[]>(`${this.reviewsUrl}/?articleId=${articleId}`).pipe(
-  tap(_ => console.log(`found reviews matching "${articleId}"`)),
   catchError(this.handleError<Review[]>('getReviewsForArticle', []))
   );
 }  
@@ -37,21 +36,18 @@ getreviewsforarticle(articleId: any): Observable<Review[]> {
 getreviews(): Observable<Review[]> {
    return this.http.get<Review[]>(this.reviewsUrl)
    .pipe(
-    tap(reviews => console.log('fetched reviews')), 
     catchError(this.handleError('getreviews', []))
    );
   }
 
   addreview (review: Review): Observable<Review> {
     return this.http.post<Review>(this.reviewsUrl, review, httpOptions).pipe(
-      tap((review: Review) => console.log(`added review w/ id=${review.id}`)),
       catchError(this.handleError<Review>('addreview'))
     );
   }
 
   updatereview (review: Review): Observable<any> {
     return this.http.put(this.reviewsUrl, review, httpOptions).pipe(
-      tap(_ => console.log(`updated review id=${review.id}`)),
       catchError(this.handleError<any>('updatereview'))
     );
   }
@@ -61,7 +57,6 @@ getreviews(): Observable<Review[]> {
     const url = `${this.reviewsUrl}/${id}`;
 
     return this.http.delete<Review>(url, httpOptions).pipe(
-      tap(_ => console.log(`deleted review id=${id}`)),
       catchError(this.handleError<Review>('deletereview'))
     );
   }
@@ -73,7 +68,6 @@ searchreviews(term: string): Observable<Review[]> {
     return of([]);
   }
   return this.http.get<Review[]>(`${this.reviewsUrl}/?name=${term}`).pipe(
-    tap(_ => console.log(`found reviews matching "${term}"`)),
     catchError(this.handleError<Review[]>('searchreviews', []))
   );
 }

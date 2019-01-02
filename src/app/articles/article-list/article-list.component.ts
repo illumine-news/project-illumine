@@ -41,44 +41,14 @@ export class ArticleListComponent implements OnInit {
 
   constructor(private articleService: ArticleService) { }
 
-  // ngOnChanges(changes: SimpleChanges)
-  // {
-  //   console.log("ARTICLE LIST org: " + this.organization);
-  //   if (changes['data']) {
-  //     this.articles$ = this.getArticlesForOrganization(this.organization.id);
-  //   }
-  // }
-
-  ngOnChanges() {
-    console.log("Article List changed$: " + this.articles$);
-    console.log("Article List changed: " + this.articles);
-  }
-
   ngOnInit() {
-
-    console.log("ORG ID: " + this.organizationId);
-
-    // this._data
-    // .subscribe(x => {
-    //   this.getArticlesForOrganization(this.organizationId);
-    // });
-
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 
-    
-    //console.log(this.articles$);
-
-    //this.organization = new Organization();
-    //this.organization.id = 20;
-
     if (this.organizationId) {
-      console.log("Getting articles for org");
       this.getArticlesForOrganization(this.organizationId);
     }
     else {
-      console.log("Getting all articles");
-
       this.getArticles();
     }
   }

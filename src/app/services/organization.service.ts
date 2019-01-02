@@ -24,7 +24,6 @@ export class OrganizationService {
 private organizationsUrl = 'api/organizations';
 
   getOrganization(id: number): Observable<Organization> {
-    console.log("Getting org for id: " + id);
     const url = `${this.organizationsUrl}/${id}`;
     return this.http.get<Organization>(url);
   }
@@ -32,21 +31,18 @@ private organizationsUrl = 'api/organizations';
   getOrganizations(): Observable<Organization[]> {
    return this.http.get<Organization[]>(this.organizationsUrl)
    .pipe(
-    tap(organizations => console.log('fetched organizations')), 
     catchError(this.handleError('getOrganizations', []))
    );
   }
 
   addOrganization (organization: Organization): Observable<Organization> {
     return this.http.post<Organization>(this.organizationsUrl, organization, httpOptions).pipe(
-      tap((organization: Organization) => console.log(`added organization w/ id=${organization.id}`)),
       catchError(this.handleError<Organization>('addOrganization'))
     );
   }
 
   updateOrganization (organization: Organization): Observable<any> {
     return this.http.put(this.organizationsUrl, organization, httpOptions).pipe(
-      tap(_ => console.log(`updated organization id=${organization.id}`)),
       catchError(this.handleError<any>('updateOrganization'))
     );
   }
@@ -56,7 +52,6 @@ private organizationsUrl = 'api/organizations';
     const url = `${this.organizationsUrl}/${id}`;
 
     return this.http.delete<Organization>(url, httpOptions).pipe(
-      tap(_ => console.log(`deleted organization id=${id}`)),
       catchError(this.handleError<Organization>('deleteOrganization'))
     );
   }
@@ -68,7 +63,6 @@ searchOrganizations(term: string): Observable<Organization[]> {
     return of([]);
   }
   return this.http.get<Organization[]>(`${this.organizationsUrl}/?name=${term}`).pipe(
-    tap(_ => console.log(`found organizations matching "${term}"`)),
     catchError(this.handleError<Organization[]>('searchOrganizations', []))
   );
 }

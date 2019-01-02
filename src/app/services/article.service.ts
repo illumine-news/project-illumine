@@ -26,7 +26,6 @@ private articlesUrlAlt = 'api/articles/';
   getArticle(id: number): Observable<Article> {
     const url = `${this.articlesUrl}/${id}`;
     return this.http.get<Article>(url).pipe(
-      tap(_ => console.log(`fetched article id=${id}`)),
       catchError(this.handleError<Article>(`getArticle id=${id}`))
     );
   }
@@ -34,7 +33,6 @@ private articlesUrlAlt = 'api/articles/';
   getArticles(): Observable<Article[]> {
    return this.http.get<Article[]>(this.articlesUrl)
    .pipe(
-    tap(articles => console.log('fetched articles')), 
     catchError(this.handleError('getArticles', []))
    );
   }
@@ -42,24 +40,21 @@ private articlesUrlAlt = 'api/articles/';
   getarticlesfororganization(organizationId: number | string): Observable<Article[]> {
     if (!organizationId)
   {
-    console.log("Organization ID not found");
+    console.log("Organization ID not found: " + organizationId);
     return of ([]);
   }
   
   return this.http.get<Article[]>(`api/reviews/?articleId=9`).pipe(
-  tap(_ => console.log(`found organizations matching "${organizationId}"`)),
   catchError(this.handleError<Article[]>('getArticlesForOrganization', []))
   );
   }
 
-  /* GET articles whose name contains search term */
+
   searchArticles(term: string): Observable<Article[]> {
   if (!term.trim()) {
-    // if not search term, return empty article array.
     return of([]);
   }
   return this.http.get<Article[]>(`${this.articlesUrl}/?articleName=${term}`).pipe(
-    tap(_ => console.log(`found articles matching "${term}"`)),
     catchError(this.handleError<Article[]>('searchArticles', []))
   );
 }

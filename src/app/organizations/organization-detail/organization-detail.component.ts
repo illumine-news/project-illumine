@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Organization } from 'app/domain/organization';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -24,22 +24,12 @@ export class OrganizationDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("Executing get org");
     this.getorganization();
-    console.log("Get org result: " + this.organization);
-  }
-
-  ngOnChange() {
-    console.log("Checking for org value...");
-    if (this.organization) {
-      console.log("Organization self: " + this.organization);
-    }
   }
 
   getorganization(): void {
     this.organizationService.getOrganization(this.organizationId)
       .subscribe(organization => this.organization = organization)
-      .add(console.log("RESULT: " + this.organization));
   }
 
   goBack(): void {
