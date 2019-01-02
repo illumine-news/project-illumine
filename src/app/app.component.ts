@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(private responsiveService: ResponsiveService) {}
 
 ngOnInit() {
-  this.isMobile = this.responsiveService.mobileCheckRegEx();
+this.isMobile = this.responsiveService.mobileCheckRegEx();
 }
 
   getPathForLogo(): string {    
@@ -27,12 +27,14 @@ ngOnInit() {
     {
       path = "assets/img/illumine_logo.svg";
     }
-
     return path;
   }
 
-  remove(): void {
+  removeDisclaimer(): void {
     let disclaimer = document.getElementById("disclaimerMsg");
-    disclaimer.remove();
+    if (disclaimer) {
+      disclaimer.remove();
+    }
   }
+
 }

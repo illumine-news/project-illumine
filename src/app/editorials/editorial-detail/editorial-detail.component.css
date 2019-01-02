@@ -4,12 +4,13 @@ h3, h5 {
 
 .mat-grid-list {
     padding: 5px;
+    height: 100%;
 }
 
 .mat-grid-tile {
     padding: 0px;
-    max-height: 150px;
     min-height: 30px;
+    height: 100%;
     overflow: scroll;
 }
 

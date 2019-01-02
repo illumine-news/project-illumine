@@ -1,12 +1,13 @@
   <div class="header">
     <div *ngIf=!isMobile class="disclaimerContainer">
             <p class="disclaimer" id="disclaimerMsg">
-            <button title="Dimiss" class="button" (click)="remove()">x</button>
+            <button title="Dimiss" class="button" (click)="removeDisclaimer()">x</button>
             Hi there. This is a prototype for a site that provides reviews and analysis of news.
             Please direct any comments, questions, and/or suggestions to <a href="mailto:illumine.news@gmail.com">illumine.news@gmail.com</a>.
-            </p>
-          </div>
-          <h1><a routerLink=""><img class="logo" src="{{getPathForLogo()}}"></a></h1>
+            </p>    
+    </div>
+
+    <h1><a routerLink=""><img class="logo" src="{{getPathForLogo()}}"></a></h1>
     <nav>
       <a routerLink="/articles" [routerLinkActive]="'is-active'">Articles</a>
       <a routerLink="/editorials" [routerLinkActive]="'is-active'">Editorials</a>
@@ -14,14 +15,15 @@
       <a routerLink="/reviews" [routerLinkActive]="'is-active'">Reviews</a>
       <!----<a routerLink="/NOT_IMPLEMENTED">Contributors</a>-->
     </nav>
+
         </div>
 
-<div *ngIf=isMobile class="disclaimerContainerMobile">
+      <div *ngIf=isMobile class="disclaimerContainerMobile">
             <p class="disclaimer" id="disclaimerMsg">
-            <button title="Dimiss" class="button" (click)="remove()">x</button>
+            <button title="Dimiss" class="button" (click)="removeDisclaimer()">x</button>
             Hi there. This is a prototype for a site that provides reviews and analysis of news.
             Please direct any comments, questions, and/or suggestions to <a href="mailto:illumine.news@gmail.com">illumine.news@gmail.com</a>.
             </p>
-          </div>
+      </div>
     
 <router-outlet></router-outlet>

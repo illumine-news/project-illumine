@@ -1,16 +1,3 @@
-<!----<div *ngIf="admin && editorial">
-
-    <h2>Editorial Metadata</h2>
-    
-    <div><span>id: </span>{{editorial.id}}</div>
-    <div>
-      <label>Editable Name:
-        <span>{{editorial.name}}</span>
-      </label>
-    </div>
-  
-</div>-->
-
 <div *ngIf="editorial"> 
   <h3>{{editorial.editorialName | uppercase}}</h3>
   <h5>by {{editorial.authorName}}</h5>
