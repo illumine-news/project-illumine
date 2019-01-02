@@ -1,3 +1,12 @@
+h2 {
+
+    width: 100%;
+    padding: 5px;
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: black;
+}
+
 mat-list {
     width: 80%;
     height: 80%;
@@ -5,13 +14,28 @@ mat-list {
 }
 
 mat-list-item {
-    height: 250px !important;
+    min-height: 250px !important;
     width: 100%;
     padding: 20px;
     flex-wrap: wrap;
     word-wrap: break-word;
     overflow: hidden;
 }
+
+mat-list-item:not(:last-child) {
+    border: solid black;
+    border-width: 2px;
+    border-bottom: none;
+}
+
+mat-list-item:last-child {
+    border: 2px solid black;
+  }
+
+mat-list-item:nth-child(even) {
+    background: lightgrey;
+    
+  }
 
 .matHeader {
     margin: 5px;
@@ -21,13 +45,15 @@ mat-list-item {
 }
 
 .reviewText {
-    width: 100%;
+    width: 95%;
+    padding: 10px 10px 15px 10px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     white-space: pre-wrap;
     text-anchor: start;
     margin: 5px;
     flex-wrap: wrap;
+    hyphens: auto;
 }
 
 .bad {

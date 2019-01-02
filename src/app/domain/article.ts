@@ -7,4 +7,5 @@ export class Article {
     datePublished: Date;
     illumineScore: number;
     articleSummary: string;
+    articleLink: string;
 }

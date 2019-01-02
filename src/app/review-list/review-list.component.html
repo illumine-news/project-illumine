@@ -1,24 +1,28 @@
-<h2>Reviews</h2>
-
-<div *ngIf="article">
-<h3>{{article.articleName}}</h3>
-</div>
+<h2 *ngIf="article">Reviews</h2>
 
   <mat-list>
   <mat-list-item *ngFor="let review of reviews$ | async">
-
+   
     <div mat-line class="section">
+      <div *ngIf="!article">
+        <h3>{{review.articleName}}</h3>
+        </div>
       <div class="label">Score: </div>
       <div [ngClass]="{bad: (review.reviewScore < 40), 
                       good: (review.reviewScore > 59), 
                       mediocre: (review.reviewScore > 39 && review.reviewScore < 60)}">{{review.reviewScore}}
                       </div>
+    
       </div>
 
 
     <div mat-line class="section">
         <div class="label">Review by {{review.contributorName}}</div>
         <div></div>
+    </div>
+
+    <div mat-line class="section">
+        <div class="label">Summary</div>
     </div>
 
       <div mat-line>

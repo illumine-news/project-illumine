@@ -24,7 +24,9 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 6, articleName: 'Guide to Griefing', authorName: "Vizzini", organizationId: "19", organizationName: "The Atlantic", articleSummary: this.articleSummaryText,  datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
       { id: 7, articleName: 'Executive Privilege', authorName: "Chester A. Arthur", organizationId: "16", organizationName: "MSNBC", articleSummary: this.articleSummaryText,  datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
       { id: 8, articleName: 'Righteous Fury', authorName: "Abraham Lincoln", organizationId: "14", organizationName: "CNN", articleSummary: this.articleSummaryText,  datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
-      { id: 9, articleName: 'What went wrong in 2016', authorName: "Nate Silver", organizationId: "20", organizationName: "FiveThirtyEight", articleSummary: this.articleSummaryText,  datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
+      { id: 9, articleName: 'The Real Story of 2016', authorName: "Nate Silver", organizationId: "20", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82, 
+               articleLink: "https://fivethirtyeight.com/features/the-real-story-of-2016/",
+               articleSummary: 'Nate Silver discusses what reporters and analysts got wrong in the days, weeks, and months leading up to the 2016 Presidential election.' },
       { id: 10, articleName: 'Neon Demons', authorName: "Jane Austen", organizationId: "11", organizationName: "Reuters", articleSummary: this.articleSummaryText,  datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
     const organizations = [
@@ -40,7 +42,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, name: 'FiveThirtyEight', organizationScore: 80 }
     ];
     const editorials = [
-      { id: 21, editorialName: 'Journalism in numbers', authorName: "Nate Silver", organizationName: "FiveThirtyEight", text: this.editorialText, datePublished: new Date('December 17, 1995 03:24:00'), illumineScore: 99 },
+      { id: 21, editorialName: 'Warp verfication', authorName: "Jean-Luc Picard", organizationName: "United Federation of Planets", datePublished: new Date('December 17, 2387 03:24:00'), illumineScore: 99,
+                text: `During my time as an officer in the Federation, I have seen many things. Red shirts dying for what often seemed like nothing. Teleportation gone horribly awry. But what I haven't seen is good journalism.
+                This is why I have spent countless hours holed up in the captain's quarters meticulously cataloguing reports from across the galaxy. Do you want to know what I've found? The only constant in the galactic press is this: the truth is never consistently there. How do I know? Because *I* was there at the Battle of Maxia. *I* saw an android laugh for the first time. And *I* had to endure that turncoat Riker firing on the Borg ship that had captured me.
+                You ask who is most qualified to adjudicate the veracity of all these claims? 'Tis none none other than I, Jean-Luc Picard!
+                My crew and I will visit every star system and record every event, sometimes before it happens.`},
       { id: 22, editorialName: 'How to spot fake news', authorName: "Zoe Barnes", organizationName: "New York Times", datePublished: new Date('October 15, 2004 01:19:05'), illumineScore: 92 },
       { id: 23, editorialName: 'Signs an article was rushed', authorName: "Mary Shelley", organizationName: "Fox News", datePublished: new Date('June 27, 2016 21:14:35'), illumineScore: 73 },
       { id: 24, editorialName: 'Dealing with trolls', authorName: "Jeanne d'Arc", organizationName: "CNN", datePublished: 'April 14, 1984 21:14:35', illumineScore: 84 },
@@ -48,7 +54,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 26, editorialName: 'Effects of money on news', authorName: "Charles de Gaulle", organizationName: "The Atlantic", datePublished: 'February 16, 2011 21:14:35', illumineScore: 67 },
       { id: 27, editorialName: 'Access over truth', authorName: "Yekaterina Alekseyevna", organizationName: "MSNBC", datePublished: 'June 15, 2013 21:14:35', illumineScore: 25 },
       { id: 28, editorialName: 'Echo chamber', authorName: "Jules Verne", organizationName: "CNN", datePublished: 'January 10, 2010 21:14:35', illumineScore: 58 },
-      { id: 29, editorialName: 'Beyond the news cycle', authorName: "Nate Silver", organizationName: "FiveThirtyEight", datePublished: 'October 30, 2001 21:14:35', illumineScore: 82 },
+      { id: 29, editorialName: 'Beyond the news cycle', authorName: "Jean-Luc Picard", organizationName: "United Federation of Planets", datePublished: 'October 30, 2387 21:14:35', illumineScore: 82 },
       { id: 30, editorialName: 'Peer review in journalism', authorName: "Isaac Newton", organizationName: "Reuters", datePublished: 'June 18, 2015 21:14:35', illumineScore: 7 },
     ];
     const reviews = [
@@ -60,9 +66,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 36, articleId: 6, articleName: 'Guide to Griefing', contributorId: 46, contributorName: 'Lisbeth Salander', reviewScore: 86, text: this.reviewTextGood },
       { id: 37, articleId: 7, articleName: 'Executive Privilege', contributorId: 47, contributorName: 'Walter Cronkite', reviewScore: 56, text: this.reviewTextBad },
       { id: 38, articleId: 8, articleName: 'Righteous Fury', contributorId: 48, contributorName: 'Don Collier', reviewScore: 73, text: this.reviewTextGood },
-      { id: 39, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, contributorName: 'Clare Underwood', reviewScore: 79, text: this.reviewTextGood },
+      { id: 39, articleId: 9, articleName: 'The Real Story of 2016', contributorId: 49, contributorName: 'Clare Underwood', reviewScore: 43, 
+                text: "Of course Nate would defend the integrity of the October and November polls across America. For were he to cast doubt upon them, the entire enterprise of data analytics would be called into question, dooming his circus of numbers..." },
       { id: 40, articleId: 10, articleName: 'Neon Demons', contributorId: 50, contributorName: 'Elena', reviewScore: 89, text: this.reviewTextGood },
-      { id: 41, articleId: 9, articleName: 'What went wrong in 2016', contributorId: 49, contributorName: 'Edward Meechum', reviewScore: 43, text: this.reviewTextBad }
+      { id: 41, articleId: 9, articleName: 'The Real Story of 2016', contributorId: 49, contributorName: 'Edward Meechum', reviewScore: 79, 
+                text: "I uh *gulp* agree with Clare about Nate's fears. But the man was always kind to me in his reviews of my field work. So I am giving him a decent score on this..." }
     ]
 
     return { articles, organizations, editorials, reviews };
