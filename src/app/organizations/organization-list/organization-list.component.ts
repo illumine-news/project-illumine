@@ -39,7 +39,7 @@ export class OrganizationListComponent implements OnInit {
   }
 
   getItemsPerPage(): number[] {
-    return this.itemsPerPage != null ? this.itemsPerPage : [10];
+    return this.itemsPerPage != null ? this.itemsPerPage : [20];
   }
 
   sortData(sort: MatSort) {

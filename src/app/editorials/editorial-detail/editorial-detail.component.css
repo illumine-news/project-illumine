@@ -1,20 +1,22 @@
 h3, h5 {
-    padding: 0px;
+    padding-left: 5px;
+    max-height: 10px;
 }
 
 .mat-grid-list {
-    padding: 5px;
-    height: 100%;
+    padding-left: 5px;
+    min-height: 30%;
 }
 
 .mat-grid-tile {
     padding: 0px;
     min-height: 30px;
-    height: 100%;
+    min-height: 20%;
     overflow: scroll;
 }
 
 .textContent {
-    padding: 0px;
+    padding-left: 5px;
     margin: 0px;
+    height: 100%;
 }

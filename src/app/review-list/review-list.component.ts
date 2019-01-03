@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { ReviewService } from 'app/services/review.service';
 import { Review } from 'app/domain/review';
 import { Article } from 'app/domain/article';
@@ -7,7 +7,8 @@ import { Observable, Subject } from 'rxjs';
 @Component({
   selector: 'app-review-list',
   templateUrl: './review-list.component.html',
-  styleUrls: ['./review-list.component.css']
+  styleUrls: ['./review-list.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 
 export class ReviewListComponent implements OnInit {

@@ -45,6 +45,8 @@ mat-list-item:nth-child(even) {
 
 .reviewText {
     width: 95%;
+    min-height: 20%;
+    max-height: 60%;
     padding: 10px 10px 15px 10px;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -53,6 +55,7 @@ mat-list-item:nth-child(even) {
     margin: 5px;
     flex-wrap: wrap;
     hyphens: auto;
+    text-align: start;
 }
 
 .bad {
