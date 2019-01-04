@@ -2,7 +2,7 @@ export class Editorial {
     id: number;
     name: string;
     authorName: string;
-    organizationName: string;
-    text: string; //TODO: just encapsulate as HTML
+    organizationName?: string;
+    text: string;
     datePublished: Date;
 }

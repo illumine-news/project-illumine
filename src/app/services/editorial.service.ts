@@ -6,10 +6,6 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-};
-
 @Injectable({
   providedIn: 'root'
 })
@@ -36,39 +32,7 @@ private editorialsUrl = 'api/editorials';
    );
   }
 
-  addeditorial (editorial: Editorial): Observable<Editorial> {
-    return this.http.post<Editorial>(this.editorialsUrl, editorial, httpOptions).pipe(
-      catchError(this.handleError<Editorial>('addeditorial'))
-    );
-  }
-
-  updateeditorial (editorial: Editorial): Observable<any> {
-    return this.http.put(this.editorialsUrl, editorial, httpOptions).pipe(
-      catchError(this.handleError<any>('updateeditorial'))
-    );
-  }
-
-  deleteeditorial (editorial: Editorial | number): Observable<Editorial> {
-    const id = typeof editorial === 'number' ? editorial : editorial.id;
-    const url = `${this.editorialsUrl}/${id}`;
-
-    return this.http.delete<Editorial>(url, httpOptions).pipe(
-      catchError(this.handleError<Editorial>('deleteeditorial'))
-    );
-  }
-
-  /* GET editorials whose name contains search term */
-searcheditorials(term: string): Observable<Editorial[]> {
-  if (!term.trim()) {
-    // if not search term, return empty editorial array.
-    return of([]);
-  }
-  return this.http.get<Editorial[]>(`${this.editorialsUrl}/?name=${term}`).pipe(
-    catchError(this.handleError<Editorial[]>('searcheditorials', []))
-  );
-}
-
-  private handleError<T> (operation = 'operation', result?: T) {
+   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
    
       // TODO: send the error to remote logging infrastructure
