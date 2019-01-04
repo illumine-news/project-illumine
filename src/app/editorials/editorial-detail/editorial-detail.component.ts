@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Editorial } from 'app/domain/editorial';
 
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 import { EditorialService }  from 'app/services/editorial.service';
  
@@ -17,7 +16,6 @@ export class EditorialDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private editorialService: EditorialService,
-    private location: Location
   ) {}
  
   ngOnInit(): void {
@@ -28,14 +26,5 @@ export class EditorialDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.editorialService.geteditorial(id)
       .subscribe(editorial => this.editorial = editorial);
-  }
-
-  goBack(): void {
-    this.location.back();
-  }
-
-  save(): void {
-    this.editorialService.updateeditorial(this.editorial)
-    .subscribe(() => this.goBack())
   }
 }
