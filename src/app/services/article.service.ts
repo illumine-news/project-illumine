@@ -26,7 +26,6 @@ private articlesUrlAlt = 'api/articles/';
   getArticle(id: number): Observable<Article> {
     const url = `${this.articlesUrl}/${id}`;
     return this.http.get<Article>(url).pipe(
-      catchError(this.handleError<Article>(`getArticle id=${id}`))
     );
   }
 
@@ -37,27 +36,18 @@ private articlesUrlAlt = 'api/articles/';
    );
   }
 
-  getarticlesfororganization(organizationId: number | string): Observable<Article[]> {
-    if (!organizationId)
-  {
-    console.log("Organization ID not found: " + organizationId);
-    return of ([]);
-  }
+  //TODO
+  // getarticlesfororganization(organizationId: number | string): Observable<Article[]> {
+  //   if (!organizationId)
+  // {
+  //   console.log("Organization ID not found: " + organizationId);
+  //   return of ([]);
+  // }
   
-  return this.http.get<Article[]>(`api/reviews/?articleId=9`).pipe(
-  catchError(this.handleError<Article[]>('getArticlesForOrganization', []))
-  );
-  }
-
-
-  searchArticles(term: string): Observable<Article[]> {
-  if (!term.trim()) {
-    return of([]);
-  }
-  return this.http.get<Article[]>(`${this.articlesUrl}/?articleName=${term}`).pipe(
-    catchError(this.handleError<Article[]>('searchArticles', []))
-  );
-}
+  // return this.http.get<Article[]>(`api/reviews/?articleId=9`).pipe(
+  // catchError(this.handleError<Article[]>('getArticlesForOrganization', []))
+  // );
+  // }
 
   private handleError<T> (operation = 'operation', result?: T) {
 
@@ -70,7 +60,10 @@ private articlesUrlAlt = 'api/articles/';
       console.log(`${operation} failed: ${error.message}`);
    
       // Let the app keep running by returning an empty result.
-      return of(result as T);
+      let errorCode = -1;
+      let result = new Observable<T>();
+      result.subscribe((errorCode) => {console.log(errorCode)});
+      return result;
     };
   }
 }

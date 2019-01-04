@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { OrganizationService } from 'app/services/organization.service';
 import { Observable } from 'rxjs';
 import { Article } from 'app/domain/article';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-organization-detail',
@@ -19,8 +20,7 @@ export class OrganizationDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
-    private location: Location
-
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,15 +29,8 @@ export class OrganizationDetailComponent implements OnInit {
 
   getorganization(): void {
     this.organizationService.getOrganization(this.organizationId)
-      .subscribe(organization => this.organization = organization)
-  }
-
-  goBack(): void {
-    this.location.back();
-  }
-
-  save(): void {
-    this.organizationService.updateOrganization(this.organization)
-      .subscribe(() => this.goBack())
+      .subscribe((organization => this.organization = organization),
+      (error) => this.router.navigate(['404'])
+      );
   }
 }

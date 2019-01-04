@@ -8,19 +8,21 @@ import { OrganizationDetailComponent } from 'app/organizations/organization-deta
 import { EditorialListComponent } from 'app/editorials/editorial-list/editorial-list.component';
 import { EditorialDetailComponent } from 'app/editorials/editorial-detail/editorial-detail.component';
 import { ReviewListComponent } from 'app/review-list/review-list.component';
+import { NotFoundComponent } from 'app/not-found-component';
 
 const routes: Routes = [
-  //{ path: '', pathMatch: 'full', redirectTo: ''}, //TODO: Do I need this?
   { path: '', component: DashboardComponent },
-  { path: 'articles', component: ArticleListComponent },
+  { path: 'articles', component: ArticleListComponent }, 
   { path: 'articles/:id', component: ArticleDetailComponent},
+  { path: 'articles/:**', redirectTo: '/404'},
   { path: 'editorials', component: EditorialListComponent},
   { path: 'editorials/:id', component: EditorialDetailComponent},
   { path: 'organizations', component: OrganizationListComponent },
   { path: 'organizations/:id', component: OrganizationDetailComponent},
   { path: 'reviews', component: ReviewListComponent},
   { path: 'reviews/:id', component: ReviewListComponent},
-  { path: '**', pathMatch: 'full', redirectTo: '404.html'},
+  { path: '404', component: NotFoundComponent},
+  { path: '**', redirectTo: '/404'},
   //{ path: 'reviews/:reviewId', component: ReviewDetailComponent} //TODO
 ];
 

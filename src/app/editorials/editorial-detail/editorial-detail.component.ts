@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Editorial } from 'app/domain/editorial';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { EditorialService }  from 'app/services/editorial.service';
  
@@ -15,6 +15,7 @@ export class EditorialDetailComponent implements OnInit {
  
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private editorialService: EditorialService,
   ) {}
  
@@ -25,6 +26,9 @@ export class EditorialDetailComponent implements OnInit {
   geteditorial(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.editorialService.geteditorial(id)
-      .subscribe(editorial => this.editorial = editorial);
+    .subscribe(
+      (editorial => this.editorial = editorial),
+      (error) => this.router.navigate(['404'])
+    );
   }
 }

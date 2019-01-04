@@ -20,9 +20,7 @@ private editorialsUrl = 'api/editorials';
 
   geteditorial(id: number): Observable<Editorial> {
     const url = `${this.editorialsUrl}/${id}`;
-    return this.http.get<Editorial>(url).pipe(
-      catchError(this.handleError<Editorial>(`geteditorial id=${id}`))
-    );
+    return this.http.get<Editorial>(url).pipe();
   }
 
   geteditorials(): Observable<Editorial[]> {

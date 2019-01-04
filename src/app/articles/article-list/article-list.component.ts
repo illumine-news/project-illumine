@@ -16,16 +16,6 @@ import { MatPaginator } from '@angular/material/paginator';
 export class ArticleListComponent implements OnInit {
   private _data = new BehaviorSubject<Organization[]>([]);
 
-  // @Input()
-  // set data(value) {
-  //   this._data.next(value);
-  // }
-
-  // get data() {
-  //   return this._data.getValue();
-  // }
-  
-  //@Input() organization: Organization;
   @Input() organizationId: number | string;
   @Input() displayedColumns: string[] = ['articleName', 'authorName', 'organizationName', 'datePublished', 'illumineScore'];
   @Input() itemsPerPage: number[];
@@ -45,17 +35,19 @@ export class ArticleListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 
-    if (this.organizationId) {
-      this.getArticlesForOrganization(this.organizationId);
-    }
-    else {
+    //TODO
+    // if (this.organizationId) {
+    //   this.getArticlesForOrganization(this.organizationId);
+    // }
+    // else {
       this.getArticles();
-    }
+    //}
   }
 
-  getArticlesForOrganization(organizationId: string | number): Observable<Article[]> {
-    return this.articles$ = this.articleService.getarticlesfororganization(organizationId);
-  }
+  //TODO
+  //getArticlesForOrganization(organizationId: string | number): Observable<Article[]> {
+  //  return this.articles$ = this.articleService.getarticlesfororganization(organizationId);
+  //}
 
   getArticles(): void {
     this.articleService.getArticles()
