@@ -21,6 +21,10 @@ h2 {
     font-weight: bold;
 }
 
+.summary {
+    padding-top: 5px;
+}
+
 .bad {
     background-color: #ffc2b3;
     width: 30px;
