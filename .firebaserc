@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "prod": "illumine-prod",
+    "test": "illumine-test",
+    "dev": "test-54025"
+  }
+}
