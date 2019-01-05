@@ -2,9 +2,9 @@
   "name": "project-illumine",
   "version": "0.0.0",
   "scripts": {
-    "deploy:dev": "git push -u origin master && ng build && firebase deploy --project dev",
+    "deploy:dev": "ng build && firebase deploy --project dev",
     "deploy:test": "ng build --prod && firebase deploy --project test",
-    "deploy:prod": "ng build --prod && firebase deploy --project prod",
+    "deploy:prod": "git push -u origin master && ng build --prod && firebase deploy --project prod",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

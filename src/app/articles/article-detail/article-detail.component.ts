@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Article } from 'app/domain/article';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService }  from 'app/services/article.service';
