@@ -37,6 +37,10 @@
     font-size: larger;
   }
 
+  .mat-cell {
+    padding-right: 5px;
+  }
+
   .mat-cell-centered {
     text-align: center;
   }

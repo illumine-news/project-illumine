@@ -1,4 +1,4 @@
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
 
   <ng-container matColumnDef="articleName"> 
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Article Name</th>
