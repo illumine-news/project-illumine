@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Article } from 'app/domain/article';
 import { ArticleService } from 'app/services/article.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { Organization } from 'app/domain/organization';
-import { Observable, BehaviorSubject } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 
