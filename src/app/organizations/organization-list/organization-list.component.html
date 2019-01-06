@@ -1,6 +1,6 @@
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="sortData($event)" matSortActive="datePublished" matSortDirection="desc" matSortDisableClear>
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" matSortActive="organizationScore" matSortDirection="desc" matSortDisableClear>
 
-  <ng-container matColumnDef="organizationName" class="header"> 
+  <ng-container matColumnDef="name" class="header"> 
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization Name</th>
     <td mat-cell *matCellDef="let organization" routerLink="/organizations/{{organization.id}}" class="organizationLink">{{organization.name}}</td>
   </ng-container>

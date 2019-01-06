@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { Article } from 'app/domain/article';
-import { ArticleService } from 'app/services/article.service';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { OrganizationService } from 'app/services/organization.service';
 import { Organization } from 'app/domain/organization';
 import { MatSort } from '@angular/material/sort';
@@ -14,7 +12,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 
 export class OrganizationListComponent implements OnInit {
-  @Input() displayedColumns: string[] = ['organizationName', 'organizationScore'];
+  @Input() displayedColumns: string[] = ['name', 'organizationScore'];
   @Input() itemsPerPage: number[];
   @Input() organization: Organization;
 
@@ -24,8 +22,7 @@ export class OrganizationListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private articleService: OrganizationService,
-    private organizationService: OrganizationService) { }
+  constructor(private organizationService: OrganizationService) { }
 
   ngOnInit() {
     this.getOrganizations();
@@ -34,7 +31,7 @@ export class OrganizationListComponent implements OnInit {
   }
 
   getOrganizations(): void {
-    this.articleService.getOrganizations()
+    this.organizationService.getOrganizations()
       .subscribe(organizations => this.dataSource.data = organizations);
   }
 
@@ -43,6 +40,7 @@ export class OrganizationListComponent implements OnInit {
   }
 
   sortData(sort: MatSort) {
+    console.log(sort);
     const data = this.dataSource.data.slice();
     if (!sort.active || sort.direction == '') {
       this.sortedData = data;
@@ -52,8 +50,8 @@ export class OrganizationListComponent implements OnInit {
     this.sortedData = data.sort((a, b) => {
       let isAsc = sort.direction == 'asc';
       switch (sort.active) {
-        case 'name': return this.compare(+a.name, +b.name, isAsc);
-        case 'illumineScore': return this.compare(+a.organizationScore, +b.organizationScore, isAsc);
+        case 'organizationName': return this.compare(+a.name, +b.name, isAsc);
+        case 'organizationScore': return this.compare(+a.organizationScore, +b.organizationScore, isAsc);
         default: return 0;
       }
     });

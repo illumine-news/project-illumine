@@ -28,6 +28,8 @@ export class EditorialListComponent implements OnInit {
       .subscribe(retrievedEditorials => this.editorials = retrievedEditorials);
   }
 
+  //TODO: find a better way to prevent the disclaimer from overlapping
+  //      the editorials element
   removeDisclaimer(): void {
     let disclaimer = document.getElementById("disclaimerMsg");
     console.log(this.router.url);

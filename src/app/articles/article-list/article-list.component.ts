@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, Input, SimpleChanges } from '@angular/core';
 import { Article } from 'app/domain/article';
 import { ArticleService } from 'app/services/article.service';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { Organization } from 'app/domain/organization';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
@@ -14,14 +14,12 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 
 export class ArticleListComponent implements OnInit {
-  private _data = new BehaviorSubject<Organization[]>([]);
 
   @Input() organizationId: number | string;
   @Input() displayedColumns: string[] = ['articleName', 'authorName', 'organizationName', 'datePublished', 'illumineScore'];
   @Input() itemsPerPage: number[];
 
   articles: Article[];
-  articles$: Observable<Article[]>;
 
   dataSource = new MatTableDataSource<Article>();
   sortedData;
@@ -34,14 +32,8 @@ export class ArticleListComponent implements OnInit {
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
-    //TODO
-    // if (this.organizationId) {
-    //   this.getArticlesForOrganization(this.organizationId);
-    // }
-    // else {
-      this.getArticles();
-    //}
+    this.getArticles();
+    //TODO: if org, get articles for organization
   }
 
   //TODO

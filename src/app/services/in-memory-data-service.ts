@@ -48,7 +48,13 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'The Atlantic', organizationScore: 85 },
       { id: 20, name: 'FiveThirtyEight', organizationScore: 80 },
       { id: 21, name: 'Huffington Post', organizationScore: 59 },
-      { id: 22, name: 'Mother Jones', organizationScore: 85 }
+      { id: 22, name: 'Mother Jones', organizationScore: 85 },
+      { id: 23, name: 'InfoWars', organizationScore: 26 },
+      { id: 24, name: 'Associated Press', organizationScore: 64},
+      { id: 25, name: 'The Daily Beast', organizationScore: 70},
+      { id: 26, name: 'Al Jazeera', organizationScore: 61},
+      { id: 27, name: 'Daily Kos', organizationScore: 45}
+
     ];
     const editorials = [
       { id: 26, editorialName: 'Project Illumine', authorName: "World Citizen", organizationName: "Project Illumine", datePublished: new Date('January 4, 2019 12:50:35'),

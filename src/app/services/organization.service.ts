@@ -35,38 +35,6 @@ private organizationsUrl = 'api/organizations';
    );
   }
 
-  addOrganization (organization: Organization): Observable<Organization> {
-    return this.http.post<Organization>(this.organizationsUrl, organization, httpOptions).pipe(
-      catchError(this.handleError<Organization>('addOrganization'))
-    );
-  }
-
-  updateOrganization (organization: Organization): Observable<any> {
-    return this.http.put(this.organizationsUrl, organization, httpOptions).pipe(
-      catchError(this.handleError<any>('updateOrganization'))
-    );
-  }
-
-  deleteOrganization (organization: Organization | number): Observable<Organization> {
-    const id = typeof organization === 'number' ? organization : organization.id;
-    const url = `${this.organizationsUrl}/${id}`;
-
-    return this.http.delete<Organization>(url, httpOptions).pipe(
-      catchError(this.handleError<Organization>('deleteOrganization'))
-    );
-  }
-
-  /* GET organizations whose name contains search term */
-searchOrganizations(term: string): Observable<Organization[]> {
-  if (!term.trim()) {
-    // if not search term, return empty organization array.
-    return of([]);
-  }
-  return this.http.get<Organization[]>(`${this.organizationsUrl}/?name=${term}`).pipe(
-    catchError(this.handleError<Organization[]>('searchOrganizations', []))
-  );
-}
-
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
    

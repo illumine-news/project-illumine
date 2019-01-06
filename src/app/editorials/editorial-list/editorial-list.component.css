@@ -15,9 +15,3 @@
   mat-list-item:nth-child(even):hover {
     background: initial;
   }
-
-  mat-nav-list {
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-flow: wrap;
-  }
