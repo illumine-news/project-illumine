@@ -1,0 +1,299 @@
+[33mcommit 74c7264d9fffde1d8505823c912a74becc3f9b71[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Jan 7 12:51:58 2019 -0500
+
+    Improved appearance of articles list on mobile devices
+
+[33mcommit 1641e2b45c2e6614cec207e39f488648748d84f4[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Jan 7 10:17:33 2019 -0500
+
+    Replaying changes to troubleshoot stale local
+
+[33mcommit b9a9512d67a48db8f1bac0ffc4a2ba9c9fb8c1bc[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Jan 6 19:25:54 2019 -0500
+
+    Disabled link to org detail until it can be fully implemented
+
+[33mcommit 5130be3e842c8a93472a05ee81a6441a32e6660e[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Jan 6 19:20:35 2019 -0500
+
+    Updated editorial content
+
+[33mcommit 6186f79fcfdd47c7515bf84d40562e792c1b4aa4[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Jan 6 17:48:11 2019 -0500
+
+    Removed unused items
+
+[33mcommit 0150c1e3752dc9b387b44ccff5f117bd38908c1e[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Jan 6 17:47:22 2019 -0500
+
+    Implemented sorting for organizations component
+
+[33mcommit 7ed14f0c195a6b2a620e4540e307c67b31ca6c6a[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Jan 6 16:40:15 2019 -0500
+
+    Further package updates
+
+[33mcommit 5337d2213f6527ae065ff8ab4be0650e5ec77c27[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Jan 5 18:23:15 2019 -0500
+
+    Removed unused items
+
+[33mcommit ba9b8f3911218cd5ae7952bd5e4134d1533b9410[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Jan 5 18:18:56 2019 -0500
+
+    Modified deploy script
+
+[33mcommit 35b3b3d6ac19016758e292c1bc13fcc00e6dc1ac[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Jan 5 18:15:08 2019 -0500
+
+    Updated prod deploy script to push to github
+
+[33mcommit 33938030cb6b04c65f3eb8dce5001cfccae682ff[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Jan 5 18:02:09 2019 -0500
+
+    .gitignore fix
+
+[33mcommit 6f5e3e97d8b0353e5daa1464e29a7a77056b2905[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Jan 5 17:45:51 2019 -0500
+
+    Added spacing between article list columns
+
+[33mcommit 3570629f984a5397413f8a697eb6dd7b88af04a9[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Jan 5 17:40:37 2019 -0500
+
+    Implemented band-aid to prevent disclaimer from overlapping editorials
+
+[33mcommit 9f8736e576bc1b70dab7029169579eeaa5e00418[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Jan 5 17:22:20 2019 -0500
+
+    Increased height of editorial detail container
+
+[33mcommit 68b2644ad5d8eb98a24985b95776e9dbe02e16b6[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Jan 4 17:24:05 2019 -0500
+
+    Implemented 404 handling
+
+[33mcommit c9667648e06dea78ae17a3b9e2e48062e603d7aa[m[33m ([m[1;32mPI-93-create-404-component[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Jan 4 14:37:49 2019 -0500
+
+    Added and consolidated content
+
+[33mcommit 70a0b3dda94b225e777d74f3fba471ae44de7fb7[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Jan 4 12:32:16 2019 -0500
+
+    Removed unused items from editorial detail component
+
+[33mcommit 8c4d05742bea3340e6193b57c32735563087f95e[m[33m ([m[1;32mPI-110-remove-dashboard-from-main-page-URL[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Jan 4 12:28:56 2019 -0500
+
+    Removed dashboard from main page URL
+
+[33mcommit a7fdb279675aa570be4b595b3233f7a4980a348e[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Jan 4 12:24:44 2019 -0500
+
+    Removed commented items
+
+[33mcommit 8b1e1fa393a9574918108b3c23be023c41735f09[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Thu Jan 3 17:18:17 2019 -0500
+
+    Increased width of section on review list to improve title spacing
+
+[33mcommit b7ffd6ebeb67e462cae0775fc428663acb363590[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Thu Jan 3 17:14:22 2019 -0500
+
+    Updated styling and added content
+
+[33mcommit c8a7e7395e359211f31c17627149ae8842f2291c[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Wed Jan 2 15:46:59 2019 -0500
+
+    Look and feel changes
+
+[33mcommit 85f3a8c9b23fc3870942c2afea4b0314c97acef3[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Wed Jan 2 14:42:28 2019 -0500
+
+    Updated styling and added content
+
+[33mcommit ba421d305365614b96ca5c532feab1759da388d7[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Wed Jan 2 12:41:20 2019 -0500
+
+    Removed commented code and console.log instances
+
+[33mcommit 0b8ffd6c63e0476d48af1911a2d7efdf181e5919[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 31 14:33:27 2018 -0500
+
+    Updated favicon
+
+[33mcommit 7fdf5d606df2b0977143434f9c61f68660a9c4b8[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 31 13:37:23 2018 -0500
+
+    Got routing working
+
+[33mcommit 655df0fb171d1d6c4c81023bb1e385c1ec2bdca1[m[33m ([m[1;32mPI-100-fix-firebase-routing[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Dec 30 18:32:05 2018 -0500
+
+    Updated routing for editorial list
+
+[33mcommit 3b90f858adf0df070d4cbe2f4d4e4a7dd7498f87[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Dec 30 17:56:27 2018 -0500
+
+    Added build scripts
+
+[33mcommit 08b8e1e825876dd120e63f7c10bda7620b7bacbb[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sun Dec 30 13:17:07 2018 -0500
+
+    Replaced most actual names with fictional ones
+
+[33mcommit 6531f3d062cfd60d87dd77729864fe73826ba980[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Dec 29 13:38:46 2018 -0500
+
+    Modified index page
+
+[33mcommit 09e5ec03ee55c74d691a81cafa54773be0c7317c[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Dec 29 13:31:02 2018 -0500
+
+    Added code files to assets
+
+[33mcommit 3d39fc8bc254c7184f656b178421ab554525d3c3[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Dec 29 13:16:21 2018 -0500
+
+    Troubleshooting firebase deploy
+
+[33mcommit 603ad5f3f68cefea94462eb70137ced30d6a5143[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Sat Dec 29 12:59:06 2018 -0500
+
+    Addressed prod build errors
+
+[33mcommit 3f9d8f6c8e6bf771e098ae7e77d8331ed3f42afe[m[33m ([m[1;32mPI-87-clean-up[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Dec 28 16:25:29 2018 -0500
+
+    removed commented and unused code and reorganized
+
+[33mcommit 0f41f1c5ac17f2d50cb2901e2cf174a9b2804dcd[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Dec 28 16:03:38 2018 -0500
+
+    Added disclaimer and made site more mobile-friendly
+
+[33mcommit 1eba29e338868ebd69a7055b3b7d87576d8c588d[m[33m ([m[1;32mPI-85-re-style-organizations-component[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Thu Dec 27 18:41:35 2018 -0500
+
+    Made stying of organizations component consistent with rest of site
+
+[33mcommit 44137bf71c94094989d129b206e25466f6df4356[m[33m ([m[1;32mPI-81-improve-review-list-display[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Thu Dec 27 14:47:43 2018 -0500
+
+    Improved review list component display
+
+[33mcommit 2f65e826cdccc72cb1747994ba837d99358e7e63[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Tue Dec 25 14:47:30 2018 -0500
+
+    Enhanced routing to support wildcards and empty routes
+
+[33mcommit 1afdae749cabec8707f958a8b6281c332b3da459[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 24 18:23:15 2018 -0500
+
+    Fixed spacing around illumine logo
+
+[33mcommit a51c1149dd0081f987800b50f1b3e8a72ba667b2[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 24 18:08:54 2018 -0500
+
+    Remade the illumine logo as a vector graphic
+
+[33mcommit b5ebc95c0731e010134b6441d2a3c6a16a734376[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 24 14:07:47 2018 -0500
+
+    added illumine score badge and updated illumine logo
+
+[33mcommit 5580ad6b53e46b8276b207b9dc815a93a730d982[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 24 12:34:47 2018 -0500
+
+    made review headers bold
+
+[33mcommit da592a3381b2bed98d36c6fac70117e4132cd2b5[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Dec 21 20:14:42 2018 -0500
+
+    Made all of the sample text content on the review list control visible
+
+[33mcommit 4933de11ad271f168d2e3e91cc9bdd252b57df00[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Dec 21 14:29:29 2018 -0500
+
+    Made Illumine logo smaller and compatible with both web and mobile
+
+[33mcommit a57328355b3a8d6c67ff11d641fa90f2fc30581f[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Fri Dec 21 12:29:42 2018 -0500
+
+    Enhanced illumine logo
+
+[33mcommit 3e813c54a2d3a38517af66f336040866ced50533[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Thu Dec 20 16:49:38 2018 -0500
+
+    Implemented summary version of articles component for dashboard
+
+[33mcommit b5377b79ddb488a47378d970c9bfda3b97603ee4[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Wed Dec 19 18:31:58 2018 -0500
+
+    Commented out organization list on dashboard
+
+[33mcommit a611d9eb5ef7d82371b63090768b3425563d632c[m[33m ([m[1;32mPI-74-Make-dashboard-display-on-mobile[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Wed Dec 19 18:16:06 2018 -0500
+
+    Added mobile-responsive service and implemented it on dashboard
+
+[33mcommit 55a331a99e0da4238b8fb499075257eb65c6ca9f[m[33m ([m[1;32mPI-68-refactor-editorials-list[m[33m)[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 17 13:40:06 2018 -0500
+
+    Improved appearance of editorials component; also removed footer for articles
+
+[33mcommit 1aa66c3ade628bebdda49868060b80d70d538286[m
+Author: jtasse <james.tasse@gmail.com>
+Date:   Mon Dec 17 11:46:37 2018 -0500
+
+    Fixed article linking for dashboard search
