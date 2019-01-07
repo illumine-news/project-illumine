@@ -1,6 +1,6 @@
 <div *ngIf="editorial"> 
   <h3>{{editorial.editorialName | uppercase}}</h3>
-  <h5>by {{editorial.authorName}}</h5>
+  <h4>by<span class="authorName">{{editorial.authorName}}</span></h4>
 
     <mat-grid-list cols="1" rowHeight="4:1">
       <mat-grid-tile>
