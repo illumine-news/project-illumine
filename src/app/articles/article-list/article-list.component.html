@@ -7,21 +7,21 @@
 
   <ng-container matColumnDef="authorName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Author Name</th>
-    <td mat-cell *matCellDef="let article">{{article.authorName}} </td>
+    <td mat-cell *matCellDef="let article" class="shortName">{{article.authorName}} </td>
   </ng-container>
 
 <ng-container matColumnDef="organizationName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Organization Name</th>
-    <td mat-cell *matCellDef="let article">{{article.organizationName}}</td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Org. Name</th>
+    <td mat-cell *matCellDef="let article" class="shortName">{{article.organizationName}}</td>
   </ng-container>
 
   <ng-container matColumnDef="datePublished">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Published</th>
-    <td mat-cell *matCellDef="let article"> {{article.datePublished | date : 'M/d/yyyy, hh:mma'}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Pub. Date</th>
+    <td mat-cell *matCellDef="let article" class="datePublished"> {{article.datePublished | date : 'M/d/yyyy, hh:mma'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="illumineScore">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Illumine Score</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="scoreHeader">Illumine Score</th>
     <td mat-cell *matCellDef="let article" 
         [ngClass]="{bad: (article.illumineScore < 40), 
                     good: (article.illumineScore > 59), 

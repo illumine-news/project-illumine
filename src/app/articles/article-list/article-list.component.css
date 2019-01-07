@@ -7,45 +7,68 @@
     text-align: left;
   }
 
+.scoreHeader {
+  max-width: 30px;
+}
+
+  .mat-cell {
+      padding: 5px 5px;
+  }
+
+  .mat-column-articleName {
+    width: 25%;
+    overflow-wrap: break-word;
+  word-wrap: break-word;
+  }
+
+  .mat-column-authorName {
+    width: 17%;
+    overflow-wrap: break-word;
+  word-wrap: break-word;
+  }
+
+
+  .mat-column-organizationName {
+    width: 15%;
+    overflow-wrap: break-word;
+  word-wrap: break-word;
+  }
+
+  .mat-column-datePublished {
+  width: 18%;
+}
+
+.mat-column-illumineScore {
+  width: 1%;
+}
+
 .bad {
     background-color: #ffc2b3;
-    width: 30px;
-    height: 30px;
-    float: left;
     text-align: center;
     padding: 10px;
     font-size: larger;
+    align-self: stretch;
   }
 
   .mediocre {
     background-color: #ffffb3;
-    width: 30px;
-    height: 30px;
-    float: left;
     text-align: center;
     padding: 10px;
     font-size: larger;
+    align-self: stretch;
   }
 
   .good {
     background-color: #c2f0c2;
-    width: 30px;
-    height: 30px;
-    float: left;
+    width: 20px;
     text-align: center;
-    padding: 10px;
     font-size: larger;
-  }
-
-  .mat-cell {
-    padding-right: 5px;
-  }
-
-  .mat-cell-centered {
-    text-align: center;
+    align-self: stretch;
   }
 
   .articleLink {
+    word-wrap: break-word;
+    hyphens: auto;
     cursor: pointer;
   }
 

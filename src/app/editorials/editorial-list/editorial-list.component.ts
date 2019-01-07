@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Editorial } from 'app/domain/editorial';
 import { EditorialService } from 'app/services/editorial.service';
-import { OrganizationService } from 'app/services/organization.service';
 import { Router } from '@angular/router';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-editorial-list',
@@ -26,6 +24,17 @@ export class EditorialListComponent implements OnInit {
   getEditorials(): void {
     this.editorialService.geteditorials()
       .subscribe(retrievedEditorials => this.editorials = retrievedEditorials);
+  }
+
+  isDashboard(): Boolean {
+    let dashboard = document.getElementById("dashboardIdentifier");
+    if (dashboard) {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 
   //TODO: find a better way to prevent the disclaimer from overlapping

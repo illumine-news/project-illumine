@@ -27,17 +27,6 @@
 
 </div>
 
-<!----
-<div class="flex-container" id = "bottomLayoutContainer">
-
- <div class="flex-item" id="organizationsContainer">
-    <h3>Organizations</h3>
-      <a *ngFor="let organization of organizations" class="col-1-4" 
-      routerLink="/detail/{{organization.id}}">
-        <div class="module organization">
-          <h4>{{organization.name}}</h4>
-        </div>
-      </a>
-    </div>
-
-</div>-->
+<!--Identifies the current page as the dashboard, 
+so components can run conditional logic-->
+<div id="dashboardIdentifier"></div>

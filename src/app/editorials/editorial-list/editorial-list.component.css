@@ -4,6 +4,12 @@
     font-size: x-large;
   }
 
+.firstItemBorder {
+  border-top-color: black;
+  border-top-width: 2px;
+  border-top-style: solid;
+}
+
   mat-list-item:nth-child(odd) {
     background: #CCC;
   }

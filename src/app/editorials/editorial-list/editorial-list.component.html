@@ -1,5 +1,6 @@
 <mat-nav-list> 
-    <mat-list-item *ngFor="let editorial of editorials | slice:0:4;">
+    <mat-list-item *ngFor="let editorial of editorials | slice:0:4;"
+                  [ngClass]="{firstItemBorder: isDashboard() && editorial == editorials[0]}">
       <a matLine routerLink="/editorials/{{editorial.id}}">
         <div class="editorialName">{{editorial.editorialName}}
         </div>
