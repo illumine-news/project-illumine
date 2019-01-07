@@ -32,7 +32,6 @@ export class EditorialListComponent implements OnInit {
   //      the editorials element
   removeDisclaimer(): void {
     let disclaimer = document.getElementById("disclaimerMsg");
-    console.log(this.router.url);
     if (disclaimer && this.router.url != "/") {
       disclaimer.remove();
     }
