@@ -4,9 +4,7 @@ import { Article } from 'app/domain/article';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService }  from 'app/services/article.service';
 import { Review } from 'app/domain/review';
-import { Observable } from 'rxjs';
-import { ReviewService } from '../../../../dist/project-illumine/app/services/review.service';
-import { map } from 'rxjs/operators';
+import { ReviewService } from 'app/services/review.service';
  
 @Component({
   selector: 'app-article-detail',
