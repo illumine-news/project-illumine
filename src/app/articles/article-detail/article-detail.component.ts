@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ArticleService }  from 'app/services/article.service';
 import { Review } from 'app/domain/review';
 import { Observable } from 'rxjs';
+import { ReviewService } from '../../../../dist/project-illumine/app/services/review.service';
+import { map } from 'rxjs/operators';
  
 @Component({
   selector: 'app-article-detail',
@@ -14,16 +16,18 @@ import { Observable } from 'rxjs';
 export class ArticleDetailComponent implements OnInit {
   @Input() article: Article;
   illumineScore: number;
-  reviews: Observable<Review[]>;
+  reviews: Review[];
 
   constructor(
     private route: ActivatedRoute,
     private articleService: ArticleService,
+    private reviewService: ReviewService,
     private router: Router
   ) {}
  
   ngOnInit(): void {
     this.getarticle();
+    this.getIllumineScore();
   }
 
   getarticle(): void {
@@ -33,4 +37,12 @@ export class ArticleDetailComponent implements OnInit {
       (error) => this.router.navigate(['404'])
       );
   }
+
+  getIllumineScore() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.reviewService.getreviewsforarticle(id)
+    .subscribe(myReviews => this.reviews = myReviews)
+  }
+
+  
 }
